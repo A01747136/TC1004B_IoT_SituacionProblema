@@ -5,7 +5,7 @@
 
 ## Situación Problema.
 
-A lo largo de cuatro semanas, para el reto de IoT se creó una base de datos en la página *Firebase*, la cual posteriormente se utilizaría para registrar ciertas lecturas. Estas lecturas serán tomadas de cinco sensores y una placa *ESP32*. Estos se utilizarán en conjunto con *Arduino* y *AppInventor*. En *Arduino*, se realizará un código en el cual se logre la conexión entre la base de datos, la placa y los sensores. Mientras que *AppInventor* será utilizado para desarrollar una aplicación de teléfono móvil en la cual se observará la información de la base de datos *Firebase*.
+A lo largo de cuatro semanas, para el reto de IoT se creó una base de datos en la página **Firebase**, la cual posteriormente se utilizaría para registrar ciertas lecturas. Estas lecturas serán tomadas de cinco sensores y una placa **ESP32**. Estos se utilizarán en conjunto con **Arduino** y **AppInventor**. En **Arduino**, se realizará un código en el cual se logre la conexión entre la base de datos, la placa y los sensores. Mientras que **AppInventor** será utilizado para desarrollar una aplicación de teléfono móvil en la cual se observará la información de la base de datos **Firebase**.
 
 ## Código
 
@@ -17,12 +17,13 @@ Primero se integran las librerías que se van a utilizar: la librería DHT es pa
 ### Constantes???
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/e19696bf-b769-48c3-a80c-c78be6f1e76e)
 
-Se definen ciertas constantes, una de ellas es para las credenciales de la red WiFi a la cual se debe de conectar el dispositivo (SSID y Password). Igualmente se introduce la clave de API para la base de datos Firebase, de la misma manera, se agrega la URL de la base de datos. Firebase fbdo funciona para interactuar con la base de datos. auth para la autenticación de usuario y config para la configuración de la conexión y autenticación de la base de datos.
+Se definen ciertas constantes, una de ellas es para las credenciales de la red WiFi a la cual se debe de conectar el dispositivo (*SSID* y *Password*). Igualmente se introduce la clave de API para la base de datos Firebase, de la misma manera, se agrega la URL de la base de datos. Firebase fbdo funciona para interactuar con la base de datos. auth para la autenticación de usuario y config para la configuración de la conexión y autenticación de la base de datos.
 
-La variable sendDataPrevMillis es utilizada para el control de tiempo del envío de datos a Firebase y las variables de almacenamiento intValue y floatValue. Igualmente, se colocan las variables para el DHT, luz valor y carrera. La variable signup es para observar la conexión, si es verdadero (true) es exitosa la conexión, si es falso (false) se imprime un mensaje de error en la consola
+La variable *sendDataPrevMillis* es utilizada para el control de tiempo del envío de datos a **Firebase** y las variables *intValue* y *floatValue* son utilizadas para el almacenamiento. Igualmente, se colocan las variables para *luz*, *valor* y *carrera* y el objeto *DHT*. La variable *signup* es para observar la conexión, si es verdadero (*true*) es exitosa la conexión, si es falso (*false*) se imprime un mensaje de error en la consola.
 
 ### Conexión Wi-Fi y Firebase
 *No se cual de las dos poner*
+
 Imagen 1
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/2dea42f6-4782-478f-bcfe-5be2aacdc509)
@@ -31,7 +32,7 @@ Imagen 2
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/9337c7a8-21ba-42e3-b54e-b9854a09a21e)
 
-Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la función setup_wifi para conectar el dispositivo a la red WiFi y configurar Firebase. La función setup_wifi es la encargada de conectar el dispositivo a la red Wi-Fi que ha sido especializada y espera a que se establezca la conexión. Igualmente se configura la clave de API y la URL de la base de datos con el objeto config de Firebase. Se registran las credenciales proporcionadas por las variables SSID y Password, y si el registro es exitoso, se establece la variable signupOK como verdadera (true), si el registro falla (false) se imprime un mensaje de error en la consola.
+Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la función *setup_wifi* para conectar el dispositivo a la red WiFi y configurar **Firebase**. La función *setup_wifi* es la encargada de conectar el dispositivo a la red Wi-Fi que ha sido especializada y espera a que se establezca la conexión. Igualmente se configura la clave de *API* y la *URL* de la base de datos con el objeto config de Firebase. Se registran las credenciales proporcionadas por las variables *+SSID* y *Password*, y si el registro es exitoso, se establece la variable *signupOK* como verdadera (*true*), si el registro falla (*false*) se imprime un mensaje de error en la consola.
 
 ### Sensores
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5853b5a7-15ef-45b4-887f-321ec64899a9)
