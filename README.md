@@ -12,12 +12,12 @@ A lo largo de cuatro semanas, para el reto de IoT se creó una base de datos en 
 ### Librerías
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/19257a47-8d72-4462-b4ac-a432b88972a6)
 
-Primero se integran las librerías que se van a utilizar: la librería DHT es para el sensor de temperatura y humedad DHT11, la librería Wifi es para establecer una conexión WiFi, PubSubClient es para el MQTT que es utilizado por Firebase, FirebaseESPClient es para poder interactuar con Firebase y TokenHelper es para los tokens de autenticación.
+Primero se integran las librerías que se van a utilizar: la librería DHT es para el sensor de temperatura y humedad DHT11, la librería Wifi es para establecer una conexión WiFi, PubSubClient es para el MQTT que es utilizado por **Firebase**, FirebaseESPClient es para poder interactuar con **Firebase** y TokenHelper es para los tokens de autenticación.
 
 ### Constantes???
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/e19696bf-b769-48c3-a80c-c78be6f1e76e)
 
-Se definen ciertas constantes, una de ellas es para las credenciales de la red WiFi a la cual se debe de conectar el dispositivo (*SSID* y *Password*). Igualmente se introduce la clave de API para la base de datos Firebase, de la misma manera, se agrega la URL de la base de datos. Firebase fbdo funciona para interactuar con la base de datos. auth para la autenticación de usuario y config para la configuración de la conexión y autenticación de la base de datos.
+Se definen ciertas constantes, una de ellas es para las credenciales de la red WiFi a la cual se debe de conectar el dispositivo (*SSID* y *Password*). Igualmente se introduce la clave de API para la base de datos **Firebase**, de la misma manera, se agrega la URL de la base de datos. ****Firebase** fbdo funciona para interactuar con la base de datos. auth para la autenticación de usuario y config para la configuración de la conexión y autenticación de la base de datos.
 
 La variable *sendDataPrevMillis* es utilizada para el control de tiempo del envío de datos a **Firebase** y las variables *intValue* y *floatValue* son utilizadas para el almacenamiento. Igualmente, se colocan las variables para *luz*, *valor* y *carrera* y el objeto *DHT*. La variable *signup* es para observar la conexión, si es verdadero (*true*) es exitosa la conexión, si es falso (*false*) se imprime un mensaje de error en la consola.
 
@@ -32,7 +32,7 @@ Imagen 2
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/9337c7a8-21ba-42e3-b54e-b9854a09a21e)
 
-Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la función *setup_wifi* para conectar el dispositivo a la red WiFi y configurar **Firebase**. La función *setup_wifi* es la encargada de conectar el dispositivo a la red Wi-Fi que ha sido especializada y espera a que se establezca la conexión. Igualmente se configura la clave de *API* y la *URL* de la base de datos con el objeto config de Firebase. Se registran las credenciales proporcionadas por las variables *+SSID* y *Password*, y si el registro es exitoso, se establece la variable *signupOK* como verdadera (*true*), si el registro falla (*false*) se imprime un mensaje de error en la consola.
+Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la función *setup_wifi* para conectar el dispositivo a la red WiFi y configurar **Firebase**. La función *setup_wifi* es la encargada de conectar el dispositivo a la red Wi-Fi que ha sido especializada y espera a que se establezca la conexión. Igualmente se configura la clave de *API* y la *URL* de la base de datos con el objeto config de **Firebase**. Se registran las credenciales proporcionadas por las variables *+SSID* y *Password*, y si el registro es exitoso, se establece la variable *signupOK* como verdadera (*true*), si el registro falla (*false*) se imprime un mensaje de error en la consola.
 
 ### Sensores
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5853b5a7-15ef-45b4-887f-321ec64899a9)
@@ -44,12 +44,12 @@ En la función bucle *loop* es ejecutada continuamente hasta que se haya complet
 ### Firebase Pt. 2
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/61857a77-7aec-4c9d-9b79-065194d95380)
 
-En esta parte es el envió de datos a *Firebase*, se verifica que está listo con Firebase.ready, y con signupOK se verifica que el registro haya sido exitoso y que haya pasado el tiempo suficiente desde el último envío de datos (15 segundos). Si se cumplen estos requerimientos, realizará el envió de los valores de temperatura, humedad, valor de la fotorresistencia y estado. En la consola serial se muestra si el envió de datos fue exitoso.
+En esta parte es el envió de datos a **Firebase**, se verifica que está listo con Firebase.ready, y con signupOK se verifica que el registro haya sido exitoso y que haya pasado el tiempo suficiente desde el último envío de datos (15 segundos). Si se cumplen estos requerimientos, realizará el envió de los valores de temperatura, humedad, valor de la fotorresistencia y estado. En la consola serial se muestra si el envió de datos fue exitoso.
 
 
 ## AppInventor
 
-Se realiza una aplicación móvil para mostrar los datos resevados en la base de datos *Firebase*. Esta aplicación tiene que contar con dos campos de texto (usuario y número), los cuales también son enviados a la base de datos.
+Se realiza una aplicación móvil para mostrar los datos resevados en la base de datos **Firebase**. Esta aplicación tiene que contar con dos campos de texto (usuario y número), los cuales también son enviados a la base de datos.
 
 
 ## Diagrama de Conexiones
