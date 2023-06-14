@@ -111,7 +111,8 @@ Se definen ciertas constantes, una de ellas es para las credenciales de la red W
 La variable *sendDataPrevMillis* es utilizada para el control de tiempo del envío de datos a **Firebase** y las variables *intValue* y *floatValue* son utilizadas para el almacenamiento. Igualmente, se colocan las variables para *luz*, *valor* y *carrera* y el objeto *DHT*. La variable *signup* es para observar la conexión, si es verdadero (*true*) es exitosa la conexión, si es falso (*false*) se imprime un mensaje de error en la consola.
 
 ### Función principal
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/610ee85d-082a-4f6f-b532-14bd8034a418)
+
+![Captura de Pantalla 2023-06-14 a la(s) 8 05 55 a  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/af92e6e1-122a-40b8-98d7-6db3e4c1a107)
 
 Se desarrolla la configuración inicial con la función *setup()*, en la cual se inicia la comunicación serial a una velocidad de 115200 baudios, además de imprimir un mensaje de prueba en la consola serial. Igualmente, se configura el pin del sensor de fin de carrera como entrada y se inicia el sensor DHT. Además, se llama a la función *setup_wifi()* para conectar el dispositivo a la red Wi-Fi y configurar **Firebase**.
 
@@ -137,7 +138,9 @@ Se determinan las funciones para obtener valores de los sensores. La función *v
 Por último, las funciones para obtener los valores de temperatura y humedad del sensor DHT son *temp_dht()*, la cual lee la temperatura en grados Celsius del sensor DHT utilizando la función *readTemperature()* y la devuelve como un valor de tipo float. Igualmente, se utiliza *hum_dht()¨para leer la humedad del sensor DHT utilizando la función *readHumidity()* y la devuelve como un valor de tipo float. Para ambas funciones, si la lectura falla, se imprime un mensaje de error en la consola serial y se devuelve 0.0.
 
 ### Firebase
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/236e6797-db22-412c-90f8-dd37438cfe1e)
+
+![Captura de Pantalla 2023-06-14 a la(s) 8 06 16 a  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/790e034e-9f2d-40b1-8453-6efd6853ac0d)
+![Captura de Pantalla 2023-06-14 a la(s) 8 06 35 a  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/937488fb-ac07-4e46-b0de-6ddfc06120b7)
 
 La función *funcion_firebase()* se utiliza para enviar los datos obtenidos a **Firebase**. En esta función se verifica si **Firebase** está listo, si el registro fue exitoso y si ha pasado suficiente tiempo desde el último envío de datos. Si se cumplen todas las condiciones, utiliza las funciones *setFloat()* y *setString()* de **Firebase** para enviar los valores de temperatura, humedad, valor de luz, estado de luz y estado del sensor de fin de carrera a las rutas correspondientes en la base de datos de **Firebase**. Básicamente lo que cambia para enviar cada dato, es dentro del if de esta forma: (Firebase.RTDB.set**Tipo de variable(String/Float)**(&fbdo, "**nodo dentro de la base de datos**/**subnodo dentro del nodo**", **variable a almacenar**)). Finalmente, imprime mensajes de éxito o error en la consola serial según el resultado de cada operación.
 
