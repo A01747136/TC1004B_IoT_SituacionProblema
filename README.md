@@ -11,10 +11,25 @@ A lo largo de cuatro semanas, para el reto de IoT se creó una base de datos en 
 ![Imagen de WhatsApp 2023-06-13 a las 19 37 04](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5a0dcd48-42b0-4252-8b94-b539e753cc71)
 
 ## Configuraciones en Arduino IDE
-### Gestor de tarjetas
+### Placa esp32 configuración y conexión
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/679d0142-721b-4258-8f9e-d3d5cf5eb370)
 
 ![Captura de Pantalla 2023-06-13 a la(s) 8 28 57 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/3ef7707c-19e9-4250-9ded-f1b0ac7c5478)
+
+![Captura de Pantalla 2023-06-13 a la(s) 8 39 32 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/bce0506f-3b0f-4207-bf7d-7810c6ed2d1f)
+
+![Captura de Pantalla 2023-06-13 a la(s) 8 40 56 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/e723efd8-f7ff-4682-a155-02a7e2627070)
+
+Velocidad 
+![Captura de Pantalla 2023-06-13 a la(s) 8 41 34 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/a31f5dc8-7a77-4d71-8cde-41b297bb90fe)
+monitor serie
+![Captura de Pantalla 2023-06-13 a la(s) 8 43 46 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/88cda552-d766-40ce-ba0c-73e91ed4463d)
+
+
+preferencias
+![Captura de Pantalla 2023-06-13 a la(s) 8 42 12 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5134b362-c3cb-45a5-a096-13ec31415d4f)
+pegar link: https://dl.espressif.com/dl/package_esp32_index.json
+
 
 ### Librerías
 ![Captura de Pantalla 2023-06-13 a la(s) 8 29 52 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5a1f3e4b-288e-414e-b8de-0d1470dbf0d2)
@@ -26,6 +41,7 @@ A lo largo de cuatro semanas, para el reto de IoT se creó una base de datos en 
 ![Captura de Pantalla 2023-06-13 a la(s) 8 32 19 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/14d9c13f-6274-459b-8b00-386718aef49a)
 
 ![Captura de Pantalla 2023-06-13 a la(s) 8 33 04 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/755607fb-7e40-4494-827f-d7d30167503f)
+
 
 
 ## Código
