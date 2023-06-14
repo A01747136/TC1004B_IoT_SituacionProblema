@@ -97,11 +97,16 @@ La variable *sendDataPrevMillis* es utilizada para el control de tiempo del env�
 ### Main function 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/610ee85d-082a-4f6f-b532-14bd8034a418)
 
+Se desarrolla la configuración inicial con la función *setup()*, en la cual se inicia la comunicación serial a una velocidad de 115200 baudios, además de imprimir un mensaje de prueba en la consola serial. Igualmente, se configura el pin del sensor de fin de carrera como entrada y se inicia el sensor DHT. Además, se llama a la función *setup_wifi()* para conectar el dispositivo a la red Wi-Fi y configurar **Firebase**.
+
+Para el bucle principal *loop()*, se realiza una pausa de 2 segundos utilizando la función *delay()* para asegurar una lectura precisa de los sensores. Se llaman a las funciones para leer y obtener los valores del sensor de luz, el estado de la luz y el estado del sensor de fin de carrera, además de obtener los valores de temperatura y humedad del sensor DHT.
+De igual manera, se llama a la función *funcion_firebase()* para enviar los datos a Firebase.
+
 
 ### Conexión Wi-Fi 
 ![Imagen de WhatsApp 2023-06-13 a las 19 59 50](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/c298076d-f921-4011-9c7d-d15c0b9ef5d8)
 
-Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la función *setup_wifi* para conectar el dispositivo a la red WiFi y configurar **Firebase**. La función *setup_wifi* es la encargada de conectar el dispositivo a la red Wi-Fi que ha sido especializada y espera a que se establezca la conexión. Igualmente se configura la clave de *API* y la *URL* de la base de datos con el objeto config de **Firebase**. Se registran las credenciales proporcionadas por las variables *+SSID* y *Password*, y si el registro es exitoso, se establece la variable *signupOK* como verdadera (*true*), si el registro falla (*false*) se imprime un mensaje de error en la consola.
+Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la función *setup_wifi* para conectar el dispositivo a la red WiFi y configurar **Firebase**. La función *setup_wifi* es la encargada de conectar el dispositivo a la red Wi-Fi que ha sido especializada y espera a que se establezca la conexión. Igualmente se configura la clave de *API* y la *URL* de la base de datos con el objeto config de **Firebase**. Se registran las credenciales proporcionadas por las variables *SSID* y *Password*, y si el registro es exitoso, se establece la variable *signupOK* como verdadera (*true*), si el registro falla (*false*) se imprime un mensaje de error en la consola.
 
 ### Foto resistencia
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/35675699-8644-415f-90d7-e767ecd34fdb)
@@ -109,11 +114,15 @@ Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la
 ### Fin de carrera
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/59eee143-2912-4894-9234-83995adab511)
 
-### Sensor de temepratura y humedad DHT11
+### Sensor de temperatura y humedad DHT11
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/dc7953f0-0baa-4538-8f54-6088efddb464)
+
+Se determinan las funciones para obtener valores de los sensores. La función *valor_luz()* se utiliza para leer el valor analógico del sensor de luz utilizando la función *analogRead()* y lo devuelve. La función *estado_luz()* es utilizada para leer el valor del sensor de luz y determina el estado de iluminación (*oscuridad*, *ambiente* o *luz*) según el valor leído. Devuelve el estado como una cadena de texto. De una similar manera, la función *fin_de_carrera()* es la encargada de lee el estado del sensor de fin de carrera y devuelve *Presionado* si el sensor está presionado o *Libre* si no lo está. Por último, las funciones para obtener los valores de temperatura y humedad del sensor DHT son *temp_dht()*, la cual lee la temperatura del sensor DHT utilizando la función *readTemperature()* y la devuelve como un valor de tipo float. Igualmente, se utiliza *hum_dht()¨para leer la humedad del sensor DHT utilizando la función *readHumidity()* y la devuelve como un valor de tipo float. Para ambas funciones, si la lectura falla, se imprime un mensaje de error en la consola serial y se devuelve 0.0.
 
 ### Firebase
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/236e6797-db22-412c-90f8-dd37438cfe1e)
+
+La función *funcion_firebase()* se utiliza para enviar los datos obtenidos a **Firebase**. En esta función se verifica si **Firebase** está listo, si el registro fue exitoso y si ha pasado suficiente tiempo desde el último envío de datos. Si se cumplen todas las condiciones, utiliza las funciones *setFloat()* y *setString()* de **Firebase** para enviar los valores de temperatura, humedad, valor de luz, estado de luz y estado del sensor de fin de carrera a las rutas correspondientes en la base de datos de **Firebase**. Finalmente, imprime mensajes de éxito o error en la consola serial según el resultado de cada operación.
 
 ## Configuración de la base de datos Firebase
 
@@ -138,11 +147,9 @@ A continuación, se muestra la ventana de bloques, que representa la programaci�
 
 ![Captura de Pantalla 2023-06-13 a la(s) 10 12 53 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/cbc20c74-b2fc-47e9-a537-4954cceac143)
 
-
 El segundo conjunto de bloques se activa al presionar el botón de enviar y se encarga de enviar los datos de usuario y dígito ingresados por el usuario a la base de datos. Además, al presionar el botón, se borran los campos de texto para una mejor experiencia de uso. 
 
 ![Captura de Pantalla 2023-06-13 a la(s) 10 13 25 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5cc31ed8-41f8-40b9-8ca8-72a6772edf22)
-
 
 Para utilizar la aplicación desarrollada es necesario descargar la aplicación "MIT APP Inventror" en un dispositivo móvil Android. Una vez instalada, se debe acceder a la ventana de diseño (Designer) en MIT App Inventor desde tu ordenador y seleccionar la opción "Connect" seguida de "AI Companion". Esto generará un código QR y un código alfanumérico que se deben ingresar en la aplicación móvil desde el dispositivo.
 
@@ -159,9 +166,6 @@ Una vez que el dispositivo móvil lee el código QR o el código alfanumérico, 
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/e8663ee5-7c45-4a7b-aff2-c37e04bd8eec)
 
-En la función bucle *loop* es ejecutada continuamente hasta que se haya completado la configuración inicial. Aquí es donde se van a leer los valores y estados de los sensores que después serán enviados a la base de datos. En el sensor de iluminación, se lee el valor analógico del sensor utilizando la función *analogRead()* y se almacena en la variable *valor*. Se comparan los valores leídos para determinar el estado de iluminación (*oscuridad*, *ambiente* o *luz*). Se imprime el estado de iluminación y el valor leído en la consola serial. En el sensor de fin de carrera, se lee el estado utilizando la función digitalRead() y se almacena en la variable *pres_lib*. Se imprime el estado del sensor (*presionado* o *libre*) en la consola serial. 
-
-Y por último, para el sensor de temperatura y humedad (*DHT11*), se realiza una pausa de 2 segundos antes de leer los valores del sensor DHT para una mejor lectura. Se utiliza la función *readHumidity()* para leer la humedad y la función *readTemperature()* para leer la temperatura. Y se verifica si la lectura de los valores es exitosa utilizando la función *isnan()*. Si la lectura falla, se muestra un mensaje de error en la consola serial. Si la lectura es exitosa, se imprimen los valores de humedad y temperatura en la consola serial.
 
 ### Firebase
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/61857a77-7aec-4c9d-9b79-065194d95380)
@@ -176,10 +180,4 @@ En esta parte es el envió de datos a **Firebase**, se verifica que está listo 
 
 ![Imagen de WhatsApp 2023-06-06 a las 23 05 06](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/18310c10-1eb5-4bae-9976-35bd16fe7385)
 
-*La ultima se peude cambiar para una mas reciente (ver los otros sensores)*
-
 Se realiza una aplicación móvil para mostrar los datos resevados en la base de datos **Firebase**. Esta aplicación tiene que contar con dos campos de texto (*usuario* y *número*), los cuales también son enviados a la base de datos.
-
-
-## Diagrama de Conexiones
-![Imagen de WhatsApp 2023-06-13 a las 19 37 04](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5a0dcd48-42b0-4252-8b94-b539e753cc71)
