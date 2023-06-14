@@ -144,6 +144,9 @@ Por último, las funciones para obtener los valores de temperatura y humedad del
 
 La función *funcion_firebase()* se utiliza para enviar los datos obtenidos a **Firebase**. En esta función se verifica si **Firebase** está listo, si el registro fue exitoso y si ha pasado suficiente tiempo desde el último envío de datos. Si se cumplen todas las condiciones, utiliza las funciones *setFloat()* y *setString()* de **Firebase** para enviar los valores de temperatura, humedad, valor de luz, estado de luz y estado del sensor de fin de carrera a las rutas correspondientes en la base de datos de **Firebase**. Básicamente lo que cambia para enviar cada dato, es dentro del if de esta forma: (Firebase.RTDB.set**Tipo de variable(String/Float)**(&fbdo, "**nodo dentro de la base de datos**/**subnodo dentro del nodo**", **variable a almacenar**)). Finalmente, imprime mensajes de éxito o error en la consola serial según el resultado de cada operación.
 
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/53da0784-d786-44e6-9864-5260c08deac8)
+De esta manera es como se tiene que ver los datos en **Firebase**.
+
 ## Desarrollo de la aplicación móvil MIT AppInventor
 
 En la plataforma **MIT App Inventor**, se utilizarán bloques de programación para desarrollar una aplicación móvil que permita visualizar los datos almacenados en **Firebase** y permita al usuario ingresar información. Se mostrarán los datos resevados en la base de datos **Firebase** y la app va a contar con dos campos de texto (*usuario* y *número*), los cuales también son enviados a la base de datos. A continuación, se proporciona una explicación general de cómo se utilizarán los bloques en el entorno de App Inventor.
@@ -160,7 +163,7 @@ Es importante poner el API Key de tu base de datos en donde dice *FirebaseToken*
 
 ![Captura de Pantalla 2023-06-13 a la(s) 9 42 57 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/8fd893dd-1faa-49bf-ab53-2791ed0506d2)
 
-A continuación, se muestra la ventana de bloques, que representa la programación detrás de la aplicación que se creará. El primer conjunto de bloques se encarga de establecer la conexión con Firebase y mostrar en la pantalla del usuario las lecturas almacenadas en la base de datos. Es importante mencionar que al utilizar **Firebase** en **MIT App Inventor**, es recomendable que los nombres de las variables utilizadas en la aplicación se correspondan con los nombres de las colecciones y campos en la base de datos Firebase. Esto facilitará la sincronización y manipulación de los datos entre la aplicación y Firebase, asegurando una comunicación fluida y precisa entre ambos.
+A continuación, se muestra la ventana de bloques, que representa la programación detrás de la aplicación que se creará. El primer conjunto de bloques se encarga de establecer la conexión con Firebase y mostrar en la pantalla del usuario las lecturas almacenadas en la base de datos. Es importante mencionar que al utilizar **Firebase** en **MIT App Inventor**, es recomendable que los nombres de las variables utilizadas en la aplicación se correspondan con los nombres de las colecciones y campos en la base de datos **Firebase**. Esto facilitará la sincronización y manipulación de los datos entre la aplicación y **Firebase**, asegurando una comunicación fluida y precisa entre ambos.
 
 ![Captura de Pantalla 2023-06-13 a la(s) 10 12 53 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/cbc20c74-b2fc-47e9-a537-4954cceac143)
 
