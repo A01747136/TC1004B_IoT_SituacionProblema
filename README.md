@@ -18,8 +18,8 @@ Se realizará la conexión de varios componentes al ESP32 utilizando un protoboa
 ![Imagen de WhatsApp 2023-06-13 a las 19 37 04](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5a0dcd48-42b0-4252-8b94-b539e753cc71)
 
 ## Configuración inicial del entorno de Arduino para utilizar el ESP32
-Antes de comenzar a escribir el código de Arduino, es importante realizar algunas configuraciones en tu equipo para garantizar un óptimo funcionamiento. A continuación, se te mostrara paso a paso a través de estas configuraciones para que puedas seguir el proceso de manera sencilla
-### Placa esp32 configuración y conexión
+Antes de comenzar a escribir el código de Arduino, es importante realizar algunas configuraciones en tu equipo para garantizar un óptimo funcionamiento. A continuación, se te mostrara paso a paso a través de estas configuraciones para que puedas seguir el proceso de manera sencilla.
+### Placa ESP32: Configuración y Conexión
 
 Ve al menú "Arduino" y selecciona "Preferencias". 
 
@@ -53,8 +53,6 @@ Luego, ve al menú "Herramientas" y selecciona la opción "Monitor Serie" o "Ser
 
 ![Captura de Pantalla 2023-06-13 a la(s) 8 43 46 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/88cda552-d766-40ce-ba0c-73e91ed4463d)
 
-
-
 ### Instalación de librerías
 
 Ve al menú "Programa" y selecciona "Incluir biblioteca" > "Gestionar bibliotecas". En la ventana "Gestionar bibliotecas", verás un campo de búsqueda en la parte superior derecha. Escribe el nombre de la biblioteca que deseas instalar.
@@ -77,8 +75,6 @@ Para instalar la biblioteca Firebase ESP32 Client, escribe "Firebase ESP32" en e
 
 ![Captura de Pantalla 2023-06-13 a la(s) 8 33 04 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/755607fb-7e40-4494-827f-d7d30167503f)
 
-
-
 ## Configuración, lectura de sensores y envío de datos a la base de datos ARDUINO IDE
 
 ### Librerías
@@ -94,14 +90,13 @@ Se definen ciertas constantes, una de ellas es para las credenciales de la red W
 
 La variable *sendDataPrevMillis* es utilizada para el control de tiempo del envío de datos a **Firebase** y las variables *intValue* y *floatValue* son utilizadas para el almacenamiento. Igualmente, se colocan las variables para *luz*, *valor* y *carrera* y el objeto *DHT*. La variable *signup* es para observar la conexión, si es verdadero (*true*) es exitosa la conexión, si es falso (*false*) se imprime un mensaje de error en la consola.
 
-### Main function 
+### Función principal
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/610ee85d-082a-4f6f-b532-14bd8034a418)
 
 Se desarrolla la configuración inicial con la función *setup()*, en la cual se inicia la comunicación serial a una velocidad de 115200 baudios, además de imprimir un mensaje de prueba en la consola serial. Igualmente, se configura el pin del sensor de fin de carrera como entrada y se inicia el sensor DHT. Además, se llama a la función *setup_wifi()* para conectar el dispositivo a la red Wi-Fi y configurar **Firebase**.
 
 Para el bucle principal *loop()*, se realiza una pausa de 2 segundos utilizando la función *delay()* para asegurar una lectura precisa de los sensores. Se llaman a las funciones para leer y obtener los valores del sensor de luz, el estado de la luz y el estado del sensor de fin de carrera, además de obtener los valores de temperatura y humedad del sensor DHT.
 De igual manera, se llama a la función *funcion_firebase()* para enviar los datos a Firebase.
-
 
 ### Conexión Wi-Fi 
 ![Imagen de WhatsApp 2023-06-13 a las 19 59 50](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/c298076d-f921-4011-9c7d-d15c0b9ef5d8)
@@ -126,6 +121,23 @@ La función *funcion_firebase()* se utiliza para enviar los datos obtenidos a **
 
 ## Configuración de la base de datos Firebase
 
+Se accede a la página *firebase.google.com* y se crea un usuario en la misma.
+
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/c1b71451-5bf4-4a10-84e6-5dae7b340e6b)
+
+Una vez creado un usuario, se accede a la consola. En esta consola apareceran los proyectos que se encuentran disponibles y la opción de crear uno nuevo. En este caso, el proyecto que se creo se encuentra bajo el nombre *reto*.
+
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/61ff21c8-837d-41fd-a5b6-1cf69e40ff2b)
+
+Después de realizar esto, se obtiene la llave de acceso para el servicio de almacenamiento y comunicación. Estos datos son ingresados en las variables y constantes que se encuentran en el código de *ARDUINO IDE*.
+
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/f3adf58d-b026-4f7a-a671-bd6fbe1734f5)
+
+A partir de esto, se configuran los clientes a los que se les consederá el acceso a la base de datos y como se identifican. Por lo que se debe de entrar a las opciones del sistema mediante la página de Autenticación de la base de datos.
+
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/8441f308-9ded-43c0-ba9a-a47b079d63b6)
+
+Estos permisos hacen que cualquier cliente que cuente con las llaves de acceso pueda escribir y leer los datos que se encuentra, mientrasq que **Firebase** agrega una "marca de tiempo" a cada solicitud.
 
 ## Desarrollo de la aplicación móvil MIT AppInventor
 
@@ -158,20 +170,3 @@ Para utilizar la aplicación desarrollada es necesario descargar la aplicación 
 Una vez que el dispositivo móvil lee el código QR o el código alfanumérico, la aplicación comenzará a cargarse. Una vez que la carga se complete por completo, la pantalla de la aplicación diseñada en MIT App Inventor se mostrará en el dispositivo móvil.
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/f6ecd72c-3688-4536-9c56-b15d3da4d519)
-
-
-## extra
-
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5853b5a7-15ef-45b4-887f-321ec64899a9)
-
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/e8663ee5-7c45-4a7b-aff2-c37e04bd8eec)
-
-
-## AppInventor
-![Imagen de WhatsApp 2023-06-13 a las 19 45 34](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/1a4f3f96-7b54-4702-ac6c-663d6052f6bf)
-![Imagen de WhatsApp 2023-06-13 a las 19 45 34](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/786abe38-5c6c-4ea5-994f-209ab58bcbfb)
-
-
-![Imagen de WhatsApp 2023-06-06 a las 23 05 06](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/18310c10-1eb5-4bae-9976-35bd16fe7385)
-
-Se realiza una aplicación móvil para mostrar los datos resevados en la base de datos **Firebase**. Esta aplicación tiene que contar con dos campos de texto (*usuario* y *número*), los cuales también son enviados a la base de datos.
