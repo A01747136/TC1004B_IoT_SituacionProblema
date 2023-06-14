@@ -112,7 +112,9 @@ Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la
 ### Sensor de temperatura y humedad DHT11
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/dc7953f0-0baa-4538-8f54-6088efddb464)
 
-Se determinan las funciones para obtener valores de los sensores. La función *valor_luz()* se utiliza para leer el valor analógico del sensor de luz utilizando la función *analogRead()* y lo devuelve. La función *estado_luz()* es utilizada para leer el valor del sensor de luz y determina el estado de iluminación (*oscuridad*, *ambiente* o *luz*) según el valor leído. Devuelve el estado como una cadena de texto. De una similar manera, la función *fin_de_carrera()* es la encargada de lee el estado del sensor de fin de carrera y devuelve *Presionado* si el sensor está presionado o *Libre* si no lo está. Por último, las funciones para obtener los valores de temperatura y humedad del sensor DHT son *temp_dht()*, la cual lee la temperatura del sensor DHT utilizando la función *readTemperature()* y la devuelve como un valor de tipo float. Igualmente, se utiliza *hum_dht()¨para leer la humedad del sensor DHT utilizando la función *readHumidity()* y la devuelve como un valor de tipo float. Para ambas funciones, si la lectura falla, se imprime un mensaje de error en la consola serial y se devuelve 0.0.
+Se determinan las funciones para obtener valores de los sensores. La función *valor_luz()* se utiliza para leer el valor analógico del sensor de luz utilizando la función *analogRead()* y lo devuelve. La función *estado_luz()* es utilizada para leer el valor del sensor de luz y determina el estado de iluminación (*oscuridad*, *ambiente* o *luz*) según el valor leído. Devuelve el estado como una cadena de texto. De una similar manera, la función *fin_de_carrera()* es la encargada de lee el estado del sensor de fin de carrera y devuelve *Presionado* si el sensor está presionado o *Libre* si no lo está. 
+
+Por último, las funciones para obtener los valores de temperatura y humedad del sensor DHT son *temp_dht()*, la cual lee la temperatura del sensor DHT utilizando la función *readTemperature()* y la devuelve como un valor de tipo float. Igualmente, se utiliza *hum_dht()¨para leer la humedad del sensor DHT utilizando la función *readHumidity()* y la devuelve como un valor de tipo float. Para ambas funciones, si la lectura falla, se imprime un mensaje de error en la consola serial y se devuelve 0.0.
 
 ### Firebase
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/236e6797-db22-412c-90f8-dd37438cfe1e)
@@ -141,21 +143,21 @@ Estos permisos hacen que cualquier cliente que cuente con las llaves de acceso p
 
 ## Desarrollo de la aplicación móvil MIT AppInventor
 
-En la plataforma MIT App Inventor, se utilizarán bloques de programación para desarrollar una aplicación móvil que permita visualizar los datos almacenados en Firebase y permita al usuario ingresar información. Se mostrarán los datos resevados en la base de datos **Firebase** y la app va a contar con dos campos de texto (*usuario* y *número*), los cuales también son enviados a la base de datos. A continuación, se proporciona una explicación general de cómo se utilizarán los bloques en el entorno de App Inventor.
+En la plataforma **MIT App Inventor**, se utilizarán bloques de programación para desarrollar una aplicación móvil que permita visualizar los datos almacenados en **Firebase** y permita al usuario ingresar información. Se mostrarán los datos resevados en la base de datos **Firebase** y la app va a contar con dos campos de texto (*usuario* y *número*), los cuales también son enviados a la base de datos. A continuación, se proporciona una explicación general de cómo se utilizarán los bloques en el entorno de App Inventor.
 
-En la ventana de diseño (Designer), se arrastrarán y colocarán los elementos de la interfaz que se deseen, como etiquetas de texto, campos de texto, botones, etc. Estos componentes permitirán mostrar los datos y permitirán al usuario ingresar información.
+En la ventana de diseño (*Designer*), se arrastrarán y colocarán los elementos de la interfaz que se deseen, como etiquetas de texto, campos de texto, botones, etc. Estos componentes permitirán mostrar los datos y permitirán al usuario ingresar información.
 
 ![Imagen de WhatsApp 2023-06-13 a las 19 45 34](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/786abe38-5c6c-4ea5-994f-209ab58bcbfb)
 
-Antes de comenzar a diseñar la interfaz de la aplicación, es necesario agregar los componentes relacionados con Firebase. En la ventana de diseño (Designer), se debe agregar el componente "FirebaseDB" desde la paleta de componentes, lo cual permitirá establecer la conexión con la base de datos Firebase.
+Antes de comenzar a diseñar la interfaz de la aplicación, es necesario agregar los componentes relacionados con **Firebase**. En la ventana de diseño (*Designer*), se debe agregar el componente *FirebaseDB* desde la paleta de componentes, lo cual permitirá establecer la conexión con la base de datos **Firebase**.
 
 ![Captura de Pantalla 2023-06-13 a la(s) 9 36 15 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/1ffc3ee6-06dd-47d8-bb3a-30483bc0cfb2)
 
-Es importante poner el API Key de tu base de datos en donde dice "FirebaseToken" y el URL en "FirebaseURL" para que se sincronice la app con tu base de datos.
+Es importante poner el API Key de tu base de datos en donde dice *FirebaseToken* y el URL en *FirebaseURL* para que se sincronice la app con tu base de datos.
 
 ![Captura de Pantalla 2023-06-13 a la(s) 9 42 57 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/8fd893dd-1faa-49bf-ab53-2791ed0506d2)
 
-A continuación, se muestra la ventana de bloques, que representa la programación detrás de la aplicación que se creará. El primer conjunto de bloques se encarga de establecer la conexión con Firebase y mostrar en la pantalla del usuario las lecturas almacenadas en la base de datos. Es importante mencionar que al utilizar Firebase en MIT App Inventor, es recomendable que los nombres de las variables utilizadas en la aplicación se correspondan con los nombres de las colecciones y campos en la base de datos Firebase. Esto facilitará la sincronización y manipulación de los datos entre la aplicación y Firebase, asegurando una comunicación fluida y precisa entre ambos.
+A continuación, se muestra la ventana de bloques, que representa la programación detrás de la aplicación que se creará. El primer conjunto de bloques se encarga de establecer la conexión con Firebase y mostrar en la pantalla del usuario las lecturas almacenadas en la base de datos. Es importante mencionar que al utilizar **Firebase** en **MIT App Inventor**, es recomendable que los nombres de las variables utilizadas en la aplicación se correspondan con los nombres de las colecciones y campos en la base de datos Firebase. Esto facilitará la sincronización y manipulación de los datos entre la aplicación y Firebase, asegurando una comunicación fluida y precisa entre ambos.
 
 ![Captura de Pantalla 2023-06-13 a la(s) 10 12 53 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/cbc20c74-b2fc-47e9-a537-4954cceac143)
 
@@ -163,10 +165,10 @@ El segundo conjunto de bloques se activa al presionar el botón de enviar y se e
 
 ![Captura de Pantalla 2023-06-13 a la(s) 10 13 25 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5cc31ed8-41f8-40b9-8ca8-72a6772edf22)
 
-Para utilizar la aplicación desarrollada es necesario descargar la aplicación "MIT APP Inventror" en un dispositivo móvil Android. Una vez instalada, se debe acceder a la ventana de diseño (Designer) en MIT App Inventor desde tu ordenador y seleccionar la opción "Connect" seguida de "AI Companion". Esto generará un código QR y un código alfanumérico que se deben ingresar en la aplicación móvil desde el dispositivo.
+Para utilizar la aplicación desarrollada es necesario descargar la aplicación *"MIT APP Inventor"* en un dispositivo móvil Android. Una vez instalada, se debe acceder a la ventana de diseño (*Designer*) en *MIT AppInventor* desde tu ordenador y seleccionar la opción *"Connect"* seguida de *"AI Companion"*. Esto generará un código QR y un código alfanumérico que se deben ingresar en la aplicación móvil desde el dispositivo.
 
 ![Captura de Pantalla 2023-06-13 a la(s) 10 00 18 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/c7448c4e-fad2-4331-a421-5ec595e2bf73)
 
-Una vez que el dispositivo móvil lee el código QR o el código alfanumérico, la aplicación comenzará a cargarse. Una vez que la carga se complete por completo, la pantalla de la aplicación diseñada en MIT App Inventor se mostrará en el dispositivo móvil.
+Una vez que el dispositivo móvil lee el código QR o el código alfanumérico, la aplicación comenzará a cargarse. Una vez que la carga se complete por completo, la pantalla de la aplicación diseñada en *MIT AppInventor* se mostrará en el dispositivo móvil.
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/f6ecd72c-3688-4536-9c56-b15d3da4d519)
