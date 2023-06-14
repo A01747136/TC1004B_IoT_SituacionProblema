@@ -15,19 +15,19 @@ En resumen, el proyecto implica la interconexión de sensores a través del ESP3
 
 Se accede a la página *firebase.google.com* y se crea un usuario en la misma.
 
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/c1b71451-5bf4-4a10-84e6-5dae7b340e6b)
+![Firebase_Inicio](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/8b7254ef-ab54-4ac0-bd44-94860784092b)
 
 Una vez creado un usuario, se accede a la consola. En esta consola apareceran los proyectos que se encuentran disponibles y la opción de crear uno nuevo. En este caso, el proyecto que se creo se encuentra bajo el nombre *reto*.
 
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/61ff21c8-837d-41fd-a5b6-1cf69e40ff2b)
+![Firebase_Proy](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/836d4dc8-00e2-41e5-9646-429300135356)
 
 Después de realizar esto, se obtiene la llave de acceso para el servicio de almacenamiento y comunicación. Estos datos son ingresados en las variables y constantes que se encontrará en el código de *ARDUINO IDE*.
 
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/f3adf58d-b026-4f7a-a671-bd6fbe1734f5)
+![Firebase_SDK](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/d5cbf07d-df73-4ac9-a9c1-d10709c0803a)
 
 A partir de esto, se configuran los clientes a los que se les consederá el acceso a la base de datos y como se identifican. Por lo que se debe de entrar a las opciones del sistema mediante la página de Autenticación de la base de datos.
 
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/8441f308-9ded-43c0-ba9a-a47b079d63b6)
+![Firebase_Aut](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/492e4a4f-6191-461a-95e0-80d255809be6)
 
 Estos permisos hacen que cualquier cliente que cuente con las llaves de acceso pueda escribir y leer los datos que se encuentra, mientrasq que **Firebase** agrega una "marca de tiempo" a cada solicitud.
 
