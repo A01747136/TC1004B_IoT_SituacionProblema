@@ -50,12 +50,6 @@ void loop() {
   estado_luz();
   delay(2000);
   fin_de_carrera();
-  //delay(2000);
-  //temp_dht();
-  //hum_dht();
-  //valor = analogRead(15);
-  //Serial.print("El valor de la lectura es ");
-  //Serial.println(valor);
 
   float tempValue = temp_dht();
   float humValue = hum_dht();
