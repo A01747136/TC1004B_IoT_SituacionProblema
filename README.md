@@ -11,7 +11,7 @@ Además, se creará una aplicación utilizando **MIT App Inventor**, la cual per
 
 En resumen, el proyecto implica la interconexión de sensores a través del ESP32, la recopilación de cinco lecturas y su posterior registro en una base de datos Firebase. Asimismo, se desarrollará una aplicación móvil con MIT App Inventor para visualizar los datos almacenados en la base de datos y permitir el ingreso de información adicional.
 
-## DDiagrama de conexión de componentes
+## Diagrama de conexión de componentes
 
 Se realizará la conexión de varios componentes al ESP32 utilizando un protoboard. Los componentes que se utilizarán incluyen una fotoresistencia, un sensor de fin de carrera, un sensor de temperatura y humedad DHT11, así como el propio ESP32. Además, se emplearán algunas resistencias para completar los circuitos necesarios. El objetivo principal será establecer la interacción entre estos sensores y el ESP32 para adquirir y procesar datos de manera efectiva. A continuación, se proporcionará un diagrama para la conexión de estos componentes.
 
@@ -165,12 +165,6 @@ Una vez que el dispositivo móvil lee el código QR o el código alfanumérico, 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5853b5a7-15ef-45b4-887f-321ec64899a9)
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/e8663ee5-7c45-4a7b-aff2-c37e04bd8eec)
-
-
-### Firebase
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/61857a77-7aec-4c9d-9b79-065194d95380)
-
-En esta parte es el envió de datos a **Firebase**, se verifica que está listo con *Firebase.ready*, y con *signupOK* se verifica que el registro haya sido exitoso y que haya pasado el tiempo suficiente desde el último envío de datos (15 segundos). Si se cumplen estos requerimientos, realizará el envió de los valores de temperatura, humedad, valor de la fotorresistencia y estado. En la consola serial se muestra si el envió de datos fue exitoso.
 
 
 ## AppInventor
