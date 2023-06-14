@@ -31,7 +31,7 @@ Imagen 2
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/9337c7a8-21ba-42e3-b54e-b9854a09a21e)
 
-Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la función setup_wifi para conectar el dispositivo a la red WiFi y configurar Firebase. La función setup_wifi es la encargada de conectar el dispositivo a la red Wi-Fi que ha sido especializada y espera a que se establezca la conexión. Igualmente se configura la clave de API y la URL de la base de datos con el objeto config de Firebase. Se registran las credenciales proporcionadas por las variables SSID y Password, y si el registro es exitoso, se establece la variable signupOK como verdadera (true), Si el registro falla (false), se imprime un mensaje de error en la consola.
+Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la función setup_wifi para conectar el dispositivo a la red WiFi y configurar Firebase. La función setup_wifi es la encargada de conectar el dispositivo a la red Wi-Fi que ha sido especializada y espera a que se establezca la conexión. Igualmente se configura la clave de API y la URL de la base de datos con el objeto config de Firebase. Se registran las credenciales proporcionadas por las variables SSID y Password, y si el registro es exitoso, se establece la variable signupOK como verdadera (true), si el registro falla (false) se imprime un mensaje de error en la consola.
 
 ### Sensores
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5853b5a7-15ef-45b4-887f-321ec64899a9)
