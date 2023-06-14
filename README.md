@@ -21,7 +21,7 @@ Una vez creado un usuario, se accede a la consola. En esta consola apareceran lo
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/61ff21c8-837d-41fd-a5b6-1cf69e40ff2b)
 
-Después de realizar esto, se obtiene la llave de acceso para el servicio de almacenamiento y comunicación. Estos datos son ingresados en las variables y constantes que se encuentran en el código de *ARDUINO IDE*.
+Después de realizar esto, se obtiene la llave de acceso para el servicio de almacenamiento y comunicación. Estos datos son ingresados en las variables y constantes que se encontrará en el código de *ARDUINO IDE*.
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/f3adf58d-b026-4f7a-a671-bd6fbe1734f5)
 
