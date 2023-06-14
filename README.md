@@ -23,15 +23,7 @@ Se definen ciertas constantes, una de ellas es para las credenciales de la red W
 La variable *sendDataPrevMillis* es utilizada para el control de tiempo del envío de datos a **Firebase** y las variables *intValue* y *floatValue* son utilizadas para el almacenamiento. Igualmente, se colocan las variables para *luz*, *valor* y *carrera* y el objeto *DHT*. La variable *signup* es para observar la conexión, si es verdadero (*true*) es exitosa la conexión, si es falso (*false*) se imprime un mensaje de error en la consola.
 
 ### Conexión Wi-Fi y Firebase
-*No se cual de las dos poner*
-
-Imagen 1
-
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/2dea42f6-4782-478f-bcfe-5be2aacdc509)
-
-Imagen 2
-
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/9337c7a8-21ba-42e3-b54e-b9854a09a21e)
+![Imagen de WhatsApp 2023-06-13 a las 19 59 50](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/c298076d-f921-4011-9c7d-d15c0b9ef5d8)
 
 Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la función *setup_wifi* para conectar el dispositivo a la red WiFi y configurar **Firebase**. La función *setup_wifi* es la encargada de conectar el dispositivo a la red Wi-Fi que ha sido especializada y espera a que se establezca la conexión. Igualmente se configura la clave de *API* y la *URL* de la base de datos con el objeto config de **Firebase**. Se registran las credenciales proporcionadas por las variables *+SSID* y *Password*, y si el registro es exitoso, se establece la variable *signupOK* como verdadera (*true*), si el registro falla (*false*) se imprime un mensaje de error en la consola.
 
