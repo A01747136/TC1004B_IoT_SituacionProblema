@@ -11,6 +11,26 @@ Además, se creará una aplicación utilizando **MIT App Inventor**, la cual per
 
 En resumen, el proyecto implica la interconexión de sensores a través del ESP32, la recopilación de cinco lecturas y su posterior registro en una base de datos Firebase. Asimismo, se desarrollará una aplicación móvil con MIT App Inventor para visualizar los datos almacenados en la base de datos y permitir el ingreso de información adicional.
 
+## Configuración de la base de datos Firebase
+
+Se accede a la página *firebase.google.com* y se crea un usuario en la misma.
+
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/c1b71451-5bf4-4a10-84e6-5dae7b340e6b)
+
+Una vez creado un usuario, se accede a la consola. En esta consola apareceran los proyectos que se encuentran disponibles y la opción de crear uno nuevo. En este caso, el proyecto que se creo se encuentra bajo el nombre *reto*.
+
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/61ff21c8-837d-41fd-a5b6-1cf69e40ff2b)
+
+Después de realizar esto, se obtiene la llave de acceso para el servicio de almacenamiento y comunicación. Estos datos son ingresados en las variables y constantes que se encuentran en el código de *ARDUINO IDE*.
+
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/f3adf58d-b026-4f7a-a671-bd6fbe1734f5)
+
+A partir de esto, se configuran los clientes a los que se les consederá el acceso a la base de datos y como se identifican. Por lo que se debe de entrar a las opciones del sistema mediante la página de Autenticación de la base de datos.
+
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/8441f308-9ded-43c0-ba9a-a47b079d63b6)
+
+Estos permisos hacen que cualquier cliente que cuente con las llaves de acceso pueda escribir y leer los datos que se encuentra, mientrasq que **Firebase** agrega una "marca de tiempo" a cada solicitud.
+
 ## Diagrama de conexión de componentes
 
 Se realizará la conexión de varios componentes al ESP32 utilizando un protoboard. Los componentes que se utilizarán incluyen una fotoresistencia, un sensor de fin de carrera, un sensor de temperatura y humedad DHT11, así como el propio ESP32. Además, se emplearán algunas resistencias para completar los circuitos necesarios. El objetivo principal será establecer la interacción entre estos sensores y el ESP32 para adquirir y procesar datos de manera efectiva. A continuación, se proporcionará un diagrama para la conexión de estos componentes.
@@ -112,34 +132,14 @@ Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la
 ### Sensor de temperatura y humedad DHT11
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/dc7953f0-0baa-4538-8f54-6088efddb464)
 
-Se determinan las funciones para obtener valores de los sensores. La función *valor_luz()* se utiliza para leer el valor analógico del sensor de luz utilizando la función *analogRead()* y lo devuelve. La función *estado_luz()* es utilizada para leer el valor del sensor de luz y determina el estado de iluminación (*oscuridad*, *ambiente* o *luz*) según el valor leído. Devuelve el estado como una cadena de texto. De una similar manera, la función *fin_de_carrera()* es la encargada de lee el estado del sensor de fin de carrera y devuelve *Presionado* si el sensor está presionado o *Libre* si no lo está. 
+Se determinan las funciones para obtener valores de los sensores. La función *valor_luz()* se utiliza para leer el valor analógico del sensor de luz utilizando la función *analogRead()* y lo devuelve. La función *estado_luz()* es utilizada para leer el valor del sensor de luz y con los parámetros establecidos determina el estado de iluminación (*oscuridad*, *ambiente* o *luz*) según el valor leído. Devuelve el estado como una cadena de texto. De una similar manera, la función *fin_de_carrera()* es la encargada de lee el estado del sensor de fin de carrera y devuelve *Presionado* si el sensor está presionado y la lectura es de 0, y si la lectura es de 1significa que el botón está siendo presionado y devuelve *Libre*. 
 
-Por último, las funciones para obtener los valores de temperatura y humedad del sensor DHT son *temp_dht()*, la cual lee la temperatura del sensor DHT utilizando la función *readTemperature()* y la devuelve como un valor de tipo float. Igualmente, se utiliza *hum_dht()¨para leer la humedad del sensor DHT utilizando la función *readHumidity()* y la devuelve como un valor de tipo float. Para ambas funciones, si la lectura falla, se imprime un mensaje de error en la consola serial y se devuelve 0.0.
+Por último, las funciones para obtener los valores de temperatura y humedad del sensor DHT son *temp_dht()*, la cual lee la temperatura en grados Celsius del sensor DHT utilizando la función *readTemperature()* y la devuelve como un valor de tipo float. Igualmente, se utiliza *hum_dht()¨para leer la humedad del sensor DHT utilizando la función *readHumidity()* y la devuelve como un valor de tipo float. Para ambas funciones, si la lectura falla, se imprime un mensaje de error en la consola serial y se devuelve 0.0.
 
 ### Firebase
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/236e6797-db22-412c-90f8-dd37438cfe1e)
 
-La función *funcion_firebase()* se utiliza para enviar los datos obtenidos a **Firebase**. En esta función se verifica si **Firebase** está listo, si el registro fue exitoso y si ha pasado suficiente tiempo desde el último envío de datos. Si se cumplen todas las condiciones, utiliza las funciones *setFloat()* y *setString()* de **Firebase** para enviar los valores de temperatura, humedad, valor de luz, estado de luz y estado del sensor de fin de carrera a las rutas correspondientes en la base de datos de **Firebase**. Finalmente, imprime mensajes de éxito o error en la consola serial según el resultado de cada operación.
-
-## Configuración de la base de datos Firebase
-
-Se accede a la página *firebase.google.com* y se crea un usuario en la misma.
-
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/c1b71451-5bf4-4a10-84e6-5dae7b340e6b)
-
-Una vez creado un usuario, se accede a la consola. En esta consola apareceran los proyectos que se encuentran disponibles y la opción de crear uno nuevo. En este caso, el proyecto que se creo se encuentra bajo el nombre *reto*.
-
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/61ff21c8-837d-41fd-a5b6-1cf69e40ff2b)
-
-Después de realizar esto, se obtiene la llave de acceso para el servicio de almacenamiento y comunicación. Estos datos son ingresados en las variables y constantes que se encuentran en el código de *ARDUINO IDE*.
-
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/f3adf58d-b026-4f7a-a671-bd6fbe1734f5)
-
-A partir de esto, se configuran los clientes a los que se les consederá el acceso a la base de datos y como se identifican. Por lo que se debe de entrar a las opciones del sistema mediante la página de Autenticación de la base de datos.
-
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/8441f308-9ded-43c0-ba9a-a47b079d63b6)
-
-Estos permisos hacen que cualquier cliente que cuente con las llaves de acceso pueda escribir y leer los datos que se encuentra, mientrasq que **Firebase** agrega una "marca de tiempo" a cada solicitud.
+La función *funcion_firebase()* se utiliza para enviar los datos obtenidos a **Firebase**. En esta función se verifica si **Firebase** está listo, si el registro fue exitoso y si ha pasado suficiente tiempo desde el último envío de datos. Si se cumplen todas las condiciones, utiliza las funciones *setFloat()* y *setString()* de **Firebase** para enviar los valores de temperatura, humedad, valor de luz, estado de luz y estado del sensor de fin de carrera a las rutas correspondientes en la base de datos de **Firebase**. Básicamente lo que cambia para enviar cada dato, es dentro del if de esta forma: (Firebase.RTDB.set**Tipo de variable(String/Float)**(&fbdo, "**nodo dentro de la base de datos**/**subnodo dentro del nodo**", **variable a almacenar**)). Finalmente, imprime mensajes de éxito o error en la consola serial según el resultado de cada operación.
 
 ## Desarrollo de la aplicación móvil MIT AppInventor
 
