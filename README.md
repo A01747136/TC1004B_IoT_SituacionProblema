@@ -139,8 +139,8 @@ Por último, las funciones para obtener los valores de temperatura y humedad del
 
 ### Firebase
 
-![Captura de Pantalla 2023-06-14 a la(s) 8 06 16 a  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/790e034e-9f2d-40b1-8453-6efd6853ac0d)
-![Captura de Pantalla 2023-06-14 a la(s) 8 06 35 a  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/937488fb-ac07-4e46-b0de-6ddfc06120b7)
+![ArdCod_Firebase](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/4b9c28c7-80f3-44fc-a178-e42ee85aa1f6)
+![ArdCod_Firebase2](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/4363fab0-9724-43f3-b21a-4458e349f600)
 
 La función *funcion_firebase()* se utiliza para enviar los datos obtenidos a **Firebase**. En esta función se verifica si **Firebase** está listo, si el registro fue exitoso y si ha pasado suficiente tiempo desde el último envío de datos. Si se cumplen todas las condiciones, utiliza las funciones *setFloat()* y *setString()* de **Firebase** para enviar los valores de temperatura, humedad, valor de luz, estado de luz y estado del sensor de fin de carrera a las rutas correspondientes en la base de datos de **Firebase**. Básicamente lo que cambia para enviar cada dato, es dentro del if de esta forma: (Firebase.RTDB.set**Tipo de variable(String/Float)**(&fbdo, "**nodo dentro de la base de datos**/**subnodo dentro del nodo**", **variable a almacenar**)). Finalmente, imprime mensajes de éxito o error en la consola serial según el resultado de cada operación.
 
@@ -156,34 +156,34 @@ En la plataforma **MIT App Inventor**, se utilizarán bloques de programación p
 
 En la ventana de diseño (*Designer*), se arrastrarán y colocarán los elementos de la interfaz que se deseen, como etiquetas de texto, campos de texto, botones, etc. Estos componentes permitirán mostrar los datos y permitirán al usuario ingresar información.
 
-![Imagen de WhatsApp 2023-06-13 a las 19 45 34](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/786abe38-5c6c-4ea5-994f-209ab58bcbfb)
+![AppInv_Int](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/a136ec63-677e-44d0-ad60-6772b758345d)
 
 Antes de comenzar a diseñar la interfaz de la aplicación, es necesario agregar los componentes relacionados con **Firebase**. En la ventana de diseño (*Designer*), se debe agregar el componente *FirebaseDB* desde la paleta de componentes, lo cual permitirá establecer la conexión con la base de datos **Firebase**.
 
-![Captura de Pantalla 2023-06-13 a la(s) 9 36 15 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/1ffc3ee6-06dd-47d8-bb3a-30483bc0cfb2)
+![AppInv_FirebaseDB](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/da112fa0-016b-4ddb-a23b-f6b6614c7293)
 
 Es importante poner el API Key de tu base de datos en donde dice *FirebaseToken* y el URL en *FirebaseURL* para que se sincronice la app con tu base de datos.
 
-![Captura de Pantalla 2023-06-13 a la(s) 9 42 57 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/8fd893dd-1faa-49bf-ab53-2791ed0506d2)
+![AppInv_Prop](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/0d1ef4bc-0c64-4f88-b8a2-bc782b2112d7)
 
 A continuación, se muestra la ventana de bloques, que representa la programación detrás de la aplicación que se creará. El primer conjunto de bloques se encarga de establecer la conexión con Firebase y mostrar en la pantalla del usuario las lecturas almacenadas en la base de datos. Es importante mencionar que al utilizar **Firebase** en **MIT App Inventor**, es recomendable que los nombres de las variables utilizadas en la aplicación se correspondan con los nombres de las colecciones y campos en la base de datos **Firebase**. Esto facilitará la sincronización y manipulación de los datos entre la aplicación y **Firebase**, asegurando una comunicación fluida y precisa entre ambos.
 
-![Captura de Pantalla 2023-06-13 a la(s) 10 12 53 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/cbc20c74-b2fc-47e9-a537-4954cceac143)
+![AppInv_Blo1](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/c7176747-5eee-4a21-872b-7b58daa5abb9)
 
 El segundo conjunto de bloques se activa al presionar el botón de enviar y se encarga de enviar los datos de usuario y dígito ingresados por el usuario a la base de datos. Además, al presionar el botón, se borran los campos de texto para una mejor experiencia de uso. 
 
-![Captura de Pantalla 2023-06-13 a la(s) 10 13 25 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5cc31ed8-41f8-40b9-8ca8-72a6772edf22)
+![AppInv_Blo2](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/47b68b7a-9a01-42fd-b773-5cca87bd443d)
 
 Para utilizar la aplicación desarrollada es necesario descargar la aplicación *MIT APP Inventor* en un dispositivo móvil Android. Una vez instalada, se debe acceder a la ventana de diseño (*Designer*) en *MIT AppInventor* desde tu ordenador y seleccionar la opción *"Connect"* seguida de *"AI Companion"*. Esto generará un código QR y un código alfanumérico que se deben ingresar en la aplicación móvil desde el dispositivo.
 
-![Captura de Pantalla 2023-06-13 a la(s) 10 00 18 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/c7448c4e-fad2-4331-a421-5ec595e2bf73)
+![AppInv_QR](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/4a2a636e-7e64-443b-adbd-be8dee444633)
 
 Una vez que el dispositivo móvil lee el código QR o el código alfanumérico, la aplicación comenzará a cargarse. Una vez que la carga se complete por completo, la pantalla de la aplicación diseñada en *MIT AppInventor* se mostrará en el dispositivo móvil.
 
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/f6ecd72c-3688-4536-9c56-b15d3da4d519)
+![AppInv_SS](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/223edd9d-83e1-4ab0-8f00-459274ce8847)
 
 ## Resultados
 
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/53da0784-d786-44e6-9864-5260c08deac8)
+![Firebase_Res](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/667a5a5b-8677-4089-8328-8bae497e895d)
 
 Los valores que se obtuvieron de **Arduino** y de **AppInventor** son mostrados en la base de datos **Firebase**. Estos valores van cambiando conforme vayan siendo obtenidos.
