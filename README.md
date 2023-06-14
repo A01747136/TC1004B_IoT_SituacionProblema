@@ -168,7 +168,7 @@ El segundo conjunto de bloques se activa al presionar el botón de enviar y se e
 
 ![Captura de Pantalla 2023-06-13 a la(s) 10 13 25 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5cc31ed8-41f8-40b9-8ca8-72a6772edf22)
 
-Para utilizar la aplicación desarrollada es necesario descargar la aplicación *"MIT APP Inventor"* en un dispositivo móvil Android. Una vez instalada, se debe acceder a la ventana de diseño (*Designer*) en *MIT AppInventor* desde tu ordenador y seleccionar la opción *"Connect"* seguida de *"AI Companion"*. Esto generará un código QR y un código alfanumérico que se deben ingresar en la aplicación móvil desde el dispositivo.
+Para utilizar la aplicación desarrollada es necesario descargar la aplicación *MIT APP Inventor* en un dispositivo móvil Android. Una vez instalada, se debe acceder a la ventana de diseño (*Designer*) en *MIT AppInventor* desde tu ordenador y seleccionar la opción *"Connect"* seguida de *"AI Companion"*. Esto generará un código QR y un código alfanumérico que se deben ingresar en la aplicación móvil desde el dispositivo.
 
 ![Captura de Pantalla 2023-06-13 a la(s) 10 00 18 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/c7448c4e-fad2-4331-a421-5ec595e2bf73)
 
@@ -176,5 +176,7 @@ Una vez que el dispositivo móvil lee el código QR o el código alfanumérico, 
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/f6ecd72c-3688-4536-9c56-b15d3da4d519)
 
+## Resultados
+
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/53da0784-d786-44e6-9864-5260c08deac8)
-De esta manera es como se tiene que ver los datos en **Firebase**.
+De esta manera es como se tiene que ver los datos en **Firebase**. Se
