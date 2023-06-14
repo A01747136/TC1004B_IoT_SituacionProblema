@@ -5,40 +5,75 @@
 
 ## Situación Problema.
 
-A lo largo de cuatro semanas, para el reto de IoT se creó una base de datos en la página **Firebase**, la cual posteriormente se utilizaría para registrar ciertas lecturas. Estas cinco lecturas serán tomadas de tres sensores y una placa **ESP32**. Estos se utilizarán en conjunto con **Arduino IDE** y **AppInventor**. En **Arduino**, se realizará un código en el cual se logre la conexión entre la base de datos, la placa y los sensores. Mientras que **AppInventor** será utilizado para desarrollar una aplicación de teléfono móvil en la cual se observará la información de la base de datos **Firebase** y se permita subir dos datos al **Firebase** (usuario y dígito).
+Durante el reto de IoT, el objetivo principal consiste en utilizar un **ESP32** para conectar varios sensores y obtener cinco lecturas, las cuales serán registradas en una base de datos. Para lograr esto, se desarrollará el código necesario utilizando **Arduino IDE** y se establecerá la conexión con **Firebase** para almacenar los datos recopilados.
+
+Además, se creará una aplicación utilizando **MIT App Inventor**, la cual permitirá visualizar la información almacenada en la base de datos de Firebase. Desde esta aplicación, también será posible ingresar dos datos, el usuario y un dígito, los cuales serán guardados en la misma base de datos.
+
+En resumen, el proyecto implica la interconexión de sensores a través del ESP32, la recopilación de cinco lecturas y su posterior registro en una base de datos Firebase. Asimismo, se desarrollará una aplicación móvil con MIT App Inventor para visualizar los datos almacenados en la base de datos y permitir el ingreso de información adicional.
 
 ## Diagrama de Conexiones
+
+Se realizará la conexión de varios componentes al ESP32 utilizando un protoboard. Los componentes que se utilizarán incluyen una fotoresistencia, un sensor de fin de carrera, un sensor de temperatura y humedad DHT11, así como el propio ESP32. Además, se emplearán algunas resistencias para completar los circuitos necesarios. El objetivo principal será establecer la interacción entre estos sensores y el ESP32 para adquirir y procesar datos de manera efectiva. A continuación, se proporcionará un diagrama para la conexión de estos componentes.
+
 ![Imagen de WhatsApp 2023-06-13 a las 19 37 04](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5a0dcd48-42b0-4252-8b94-b539e753cc71)
 
-## Configuraciones en Arduino IDE
+## Configuración inicial del entorno de Arduino para utilizar el ESP32
+Antes de comenzar a escribir el código de Arduino, es importante realizar algunas configuraciones en tu equipo para garantizar un óptimo funcionamiento. A continuación, se te mostrara paso a paso a través de estas configuraciones para que puedas seguir el proceso de manera sencilla
 ### Placa esp32 configuración y conexión
+
+Ve al menú "Arduino" y selecciona "Preferencias". 
+
+![Captura de Pantalla 2023-06-13 a la(s) 8 42 12 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5134b362-c3cb-45a5-a096-13ec31415d4f)
+
+En la ventana de preferencias, verás un campo llamado "URLs adicionales de gestor de tarjetas". Asegúrate de que esté vacío o que no contenga ninguna URL incorrecta. Ahora, debes añadir la URL del gestor de tarjetas del ESP32. Para ello, copia y pega la siguiente URL en el campo de "URLs adicionales de gestor de tarjetas": https://dl.espressif.com/dl/package_esp32_index.json
+
+![Captura de Pantalla 2023-06-13 a la(s) 8 55 32 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/4f898f5a-745c-42c6-942c-e8c45de5d163)
+
+A continuación, ve al menú "Herramientas" y selecciona "Placa" > "Gestor de tarjetas". 
+
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/679d0142-721b-4258-8f9e-d3d5cf5eb370)
+
+Se abrirá el gestor de tarjetas. En el campo de búsqueda, escribe "esp32". Aparecerá la opción "esp32 by Espressif Systems". Haz clic en el botón "Instalar" para descargar e instalar el gestor de tarjetas del ESP32.
 
 ![Captura de Pantalla 2023-06-13 a la(s) 8 28 57 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/3ef7707c-19e9-4250-9ded-f1b0ac7c5478)
 
+Una vez instalado el gestor de tarjetas del ESP32, podrás seleccionar la placa ESP32 en el menú "Herramientas" > "Placa". Busca y selecciona la opción "DOIT ESP32 DEVKIT V1" de la lista de placas disponibles. Puede que tengas que desplazarte hacia abajo para encontrarla.
+
 ![Captura de Pantalla 2023-06-13 a la(s) 8 39 32 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/bce0506f-3b0f-4207-bf7d-7810c6ed2d1f)
+
+Asegúrate de que también hayas seleccionado el puerto correcto en el submenú "Puerto" dentro del menú "Herramientas". Este puerto debe corresponder al puerto USB al que está conectada tu placa ESP32.
 
 ![Captura de Pantalla 2023-06-13 a la(s) 8 40 56 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/e723efd8-f7ff-4682-a155-02a7e2627070)
 
-Velocidad 
+Ahora, ve al menú "Herramientas" nuevamente y busca la opción "Velocidad de subida" o "Upload Speed". Haz clic en ella para desplegar las opciones de velocidad de transferencia. Selecciona la velocidad de transferencia de 115200. Esta configuración asegurará una comunicación estable y confiable entre tu computadora y la placa ESP32 durante la carga del código.
+
 ![Captura de Pantalla 2023-06-13 a la(s) 8 41 34 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/a31f5dc8-7a77-4d71-8cde-41b297bb90fe)
-monitor serie
+
+Luego, ve al menú "Herramientas" y selecciona la opción "Monitor Serie" o "Serial Monitor". En la ventana del Monitor Serie, busca la velocidad de baudios (baud rate) y cámbiala a 115200. Esto garantizará que la comunicación entre la placa ESP32 y tu computadora a través del Monitor Serie se realice correctamente. 
+
 ![Captura de Pantalla 2023-06-13 a la(s) 8 43 46 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/88cda552-d766-40ce-ba0c-73e91ed4463d)
 
 
-preferencias
-![Captura de Pantalla 2023-06-13 a la(s) 8 42 12 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5134b362-c3cb-45a5-a096-13ec31415d4f)
-pegar link: https://dl.espressif.com/dl/package_esp32_index.json
 
+### Instalación de librerías
 
-### Librerías
+Ve al menú "Programa" y selecciona "Incluir biblioteca" > "Gestionar bibliotecas". En la ventana "Gestionar bibliotecas", verás un campo de búsqueda en la parte superior derecha. Escribe el nombre de la biblioteca que deseas instalar.
+
 ![Captura de Pantalla 2023-06-13 a la(s) 8 29 52 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5a1f3e4b-288e-414e-b8de-0d1470dbf0d2)
+
+Para instalar la biblioteca EspMQTTClient, escribe "EspMQTTClient" en el campo de búsqueda. Verás la biblioteca EspMQTTClient en la lista de resultados. Haz clic en el botón "Instalar" para instalarla.
 
 ![Captura de Pantalla 2023-06-13 a la(s) 8 31 04 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/3608c60b-cc2b-4e24-8c2c-20a3c834d534)
 
+Para instalar la biblioteca DHT Sensor Library, escribe "DHT Sensor" en el campo de búsqueda. Verás la biblioteca DHT Sensor Library en la lista de resultados. Haz clic en el botón "Instalar" para instalarla.
+
 ![Captura de Pantalla 2023-06-13 a la(s) 8 31 45 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/88bf12e4-da06-4950-984f-d77feae29828)
 
+Para instalar la biblioteca Firebase Arduino Client library for ESP8266, escribe "Firebase Arduino" en el campo de búsqueda. Verás la biblioteca Firebase Arduino en la lista de resultados. Haz clic en el botón "Instalar" para instalarla.
+
 ![Captura de Pantalla 2023-06-13 a la(s) 8 32 19 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/14d9c13f-6274-459b-8b00-386718aef49a)
+
+Para instalar la biblioteca Firebase ESP32 Client, escribe "Firebase ESP32" en el campo de búsqueda. Verás la biblioteca Firebase ESP32 Client en la lista de resultados. Haz clic en el botón "Instalar" para instalarla.
 
 ![Captura de Pantalla 2023-06-13 a la(s) 8 33 04 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/755607fb-7e40-4494-827f-d7d30167503f)
 
