@@ -10,7 +10,7 @@ A lo largo de cuatro semanas, para el reto de IoT se creó una base de datos en 
 ## Código
 
 ### Librerías
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/19257a47-8d72-4462-b4ac-a432b88972a6)
+![Imagen de WhatsApp 2023-06-13 a las 19 49 37](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/f547bb8c-1fbb-417e-86f8-c14e795be59e)
 
 Primero se integran las librerías que se van a utilizar: la librería DHT es para el sensor de temperatura y humedad DHT11, la librería Wifi es para establecer una conexión WiFi, PubSubClient es para el MQTT que es utilizado por **Firebase**, FirebaseESPClient es para poder interactuar con **Firebase** y TokenHelper es para los tokens de autenticación.
 
