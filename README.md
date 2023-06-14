@@ -35,6 +35,8 @@ Estos permisos hacen que cualquier cliente que cuente con las llaves de acceso p
 
 Se realizará la conexión de varios componentes al ESP32 utilizando un protoboard. Los componentes que se utilizarán incluyen una fotoresistencia, un sensor de fin de carrera, un sensor de temperatura y humedad DHT11, así como el propio ESP32. Además, se emplearán algunas resistencias para completar los circuitos necesarios. El objetivo principal será establecer la interacción entre estos sensores y el ESP32 para adquirir y procesar datos de manera efectiva. A continuación, se proporcionará un diagrama para la conexión de estos componentes.
 
+![DiagramaCon_ESP32](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/05924edc-b370-485c-9479-917b08150687)
+
 ![Imagen de WhatsApp 2023-06-13 a las 19 37 04](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5a0dcd48-42b0-4252-8b94-b539e753cc71)
 
 ## Configuración inicial del entorno de Arduino para utilizar el ESP32
