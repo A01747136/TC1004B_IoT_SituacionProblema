@@ -5,7 +5,7 @@
 
 ## Situación Problema.
 
-A lo largo de cuatro semanas, para el reto de IoT se creó una base de datos en la página **Firebase**, la cual posteriormente se utilizaría para registrar ciertas lecturas. Estas lecturas serán tomadas de cinco sensores y una placa **ESP32**. Estos se utilizarán en conjunto con **Arduino** y **AppInventor**. En **Arduino**, se realizará un código en el cual se logre la conexión entre la base de datos, la placa y los sensores. Mientras que **AppInventor** será utilizado para desarrollar una aplicación de teléfono móvil en la cual se observará la información de la base de datos **Firebase**.
+A lo largo de cuatro semanas, para el reto de IoT se creó una base de datos en la página **Firebase**, la cual posteriormente se utilizaría para registrar ciertas lecturas. Estas cinco lecturas serán tomadas de tres sensores y una placa **ESP32**. Estos se utilizarán en conjunto con **Arduino IDE** y **AppInventor**. En **Arduino**, se realizará un código en el cual se logre la conexión entre la base de datos, la placa y los sensores. Mientras que **AppInventor** será utilizado para desarrollar una aplicación de teléfono móvil en la cual se observará la información de la base de datos **Firebase** y se permita subir dos datos al **Firebase** (usuario y dígito) .
 
 ## Código
 
