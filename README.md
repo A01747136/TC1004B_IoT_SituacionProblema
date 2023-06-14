@@ -22,8 +22,9 @@ Se definen ciertas constantes, una de ellas es para las credenciales de la red W
 La variable sendDataPrevMillis es utilizada para el control de tiempo del envío de datos a Firebase y las variables de almacenamiento intValue y floatValue. Igualmente, se colocan las variables para el DHT, luz valor y carrera. La variable signup es para observar la conexión, si es verdadero (true) es exitosa la conexión, si es falso (false) se imprime un mensaje de error en la consola
 
 ### Conexión Wi-Fi y Firebase
-
+*No se cual de las dos poner*
 Imagen 1
+
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/2dea42f6-4782-478f-bcfe-5be2aacdc509)
 
 Imagen 2
