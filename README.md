@@ -181,6 +181,7 @@ Para utilizar la aplicación desarrollada es necesario descargar la aplicación 
 Una vez que el dispositivo móvil lee el código QR o el código alfanumérico, la aplicación comenzará a cargarse. Una vez que la carga se complete por completo, la pantalla de la aplicación diseñada en *MIT AppInventor* se mostrará en el dispositivo móvil.
 
 ![AppInv_SS](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/223edd9d-83e1-4ab0-8f00-459274ce8847)
+![AppInv_SS](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/4e8da29d-128b-4a1d-999e-2fe0174bff3e)
 
 ## Resultados
 
