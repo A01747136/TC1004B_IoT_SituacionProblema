@@ -43,35 +43,35 @@ Antes de comenzar a escribir el código de Arduino, es importante realizar algun
 
 Ve al menú "Arduino" y selecciona "Preferencias". 
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 42 12 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5134b362-c3cb-45a5-a096-13ec31415d4f)
+![Arduino_Pre](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/c897e4b7-5d0e-457d-a90f-dc191920242e)
 
 En la ventana de preferencias, verás un campo llamado "URLs adicionales de gestor de tarjetas". Asegúrate de que esté vacío o que no contenga ninguna URL incorrecta. Ahora, debes añadir la URL del gestor de tarjetas del ESP32. Para ello, copia y pega la siguiente URL en el campo de "URLs adicionales de gestor de tarjetas": https://dl.espressif.com/dl/package_esp32_index.json
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 55 32 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/4f898f5a-745c-42c6-942c-e8c45de5d163)
+![Arduino_Pre_URL](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/f968456b-9f65-40c9-bc2c-f23075d7fee1)
 
 A continuación, ve al menú "Herramientas" y selecciona "Placa" > "Gestor de tarjetas". 
 
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/679d0142-721b-4258-8f9e-d3d5cf5eb370)
+![Arduino_Placa](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/22366926-c209-4fa0-b4a1-73e3a069d460)
 
 Se abrirá el gestor de tarjetas. En el campo de búsqueda, escribe "esp32". Aparecerá la opción "esp32 by Espressif Systems". Haz clic en el botón "Instalar" para descargar e instalar el gestor de tarjetas del ESP32.
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 28 57 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/3ef7707c-19e9-4250-9ded-f1b0ac7c5478)
+![Arduino_LibESP](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/d34f3e62-84d8-4374-99e0-9fa1e06fa307)
 
 Una vez instalado el gestor de tarjetas del ESP32, podrás seleccionar la placa ESP32 en el menú "Herramientas" > "Placa". Busca y selecciona la opción "DOIT ESP32 DEVKIT V1" de la lista de placas disponibles. Puede que tengas que desplazarte hacia abajo para encontrarla.
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 39 32 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/bce0506f-3b0f-4207-bf7d-7810c6ed2d1f)
+![Arduino_ESP](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/56b3a8b0-6f98-4911-bdcb-18e6a526fe38)
 
 Asegúrate de que también hayas seleccionado el puerto correcto en el submenú "Puerto" dentro del menú "Herramientas". Este puerto debe corresponder al puerto USB al que está conectada tu placa ESP32.
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 40 56 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/e723efd8-f7ff-4682-a155-02a7e2627070)
+![Arduino_Puerto](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/370b4610-e0f6-4782-8585-324f7c5d5618)
 
 Ahora, ve al menú "Herramientas" nuevamente y busca la opción "Velocidad de subida" o "Upload Speed". Haz clic en ella para desplegar las opciones de velocidad de transferencia. Selecciona la velocidad de transferencia de 115200. Esta configuración asegurará una comunicación estable y confiable entre tu computadora y la placa ESP32 durante la carga del código.
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 41 34 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/a31f5dc8-7a77-4d71-8cde-41b297bb90fe)
+![Arduino_MonSer](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/010238a3-02e5-40a9-9993-ce9144779be0)
 
 Luego, ve al menú "Herramientas" y selecciona la opción "Monitor Serie" o "Serial Monitor". En la ventana del Monitor Serie, busca la velocidad de baudios (baud rate) y cámbiala a 115200. Esto garantizará que la comunicación entre la placa ESP32 y tu computadora a través del Monitor Serie se realice correctamente. 
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 43 46 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/88cda552-d766-40ce-ba0c-73e91ed4463d)
+![Arduino_Ba](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/4ffea463-d858-4dde-ba0d-31f1ab7ce926)
 
 ### Instalación de librerías
 
