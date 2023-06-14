@@ -11,7 +11,7 @@ Además, se creará una aplicación utilizando **MIT App Inventor**, la cual per
 
 En resumen, el proyecto implica la interconexión de sensores a través del ESP32, la recopilación de cinco lecturas y su posterior registro en una base de datos Firebase. Asimismo, se desarrollará una aplicación móvil con MIT App Inventor para visualizar los datos almacenados en la base de datos y permitir el ingreso de información adicional.
 
-## Diagrama de Conexiones
+## DDiagrama de conexión de componentes
 
 Se realizará la conexión de varios componentes al ESP32 utilizando un protoboard. Los componentes que se utilizarán incluyen una fotoresistencia, un sensor de fin de carrera, un sensor de temperatura y humedad DHT11, así como el propio ESP32. Además, se emplearán algunas resistencias para completar los circuitos necesarios. El objetivo principal será establecer la interacción entre estos sensores y el ESP32 para adquirir y procesar datos de manera efectiva. A continuación, se proporcionará un diagrama para la conexión de estos componentes.
 
@@ -79,7 +79,7 @@ Para instalar la biblioteca Firebase ESP32 Client, escribe "Firebase ESP32" en e
 
 
 
-## Código
+## Configuración, lectura de sensores y envío de datos a la base de datos ARDUINO IDE
 
 ### Librerías
 ![Imagen de WhatsApp 2023-06-13 a las 19 49 37](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/f547bb8c-1fbb-417e-86f8-c14e795be59e)
@@ -115,10 +115,33 @@ Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la
 ### Firebase
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/236e6797-db22-412c-90f8-dd37438cfe1e)
 
+## Configuración de la base de datos Firebase
 
-## AppInventor
-![Imagen de WhatsApp 2023-06-13 a las 19 45 34](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/1a4f3f96-7b54-4702-ac6c-663d6052f6bf)
+
+## Desarrollo de la aplicación móvil MIT AppInventor
+
+En la plataforma MIT App Inventor, se utilizarán bloques de programación para desarrollar una aplicación móvil que permita visualizar los datos almacenados en Firebase y permita al usuario ingresar información. A continuación, se proporciona una explicación general de cómo se utilizarán los bloques en el entorno de App Inventor.
+
+En la ventana de diseño (Designer), se arrastrarán y colocarán los elementos de la interfaz que se deseen, como etiquetas de texto, campos de texto, botones, etc. Estos componentes permitirán mostrar los datos y permitirán al usuario ingresar información.
+
 ![Imagen de WhatsApp 2023-06-13 a las 19 45 34](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/786abe38-5c6c-4ea5-994f-209ab58bcbfb)
+
+Antes de comenzar a diseñar la interfaz de la aplicación, es necesario agregar los componentes relacionados con Firebase. En la ventana de diseño (Designer), se debe agregar el componente "FirebaseDB" desde la paleta de componentes, lo cual permitirá establecer la conexión con la base de datos Firebase.
+
+![Captura de Pantalla 2023-06-13 a la(s) 9 36 15 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/1ffc3ee6-06dd-47d8-bb3a-30483bc0cfb2)
+
+Es importante poner el API Key de tu base de datos en donde dice "FirebaseToken" y el URL en "FirebaseURL" para que se sincronice la app con tu base de datos.
+
+![Captura de Pantalla 2023-06-13 a la(s) 9 42 57 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/8fd893dd-1faa-49bf-ab53-2791ed0506d2)
+
+A continuación, se muestra la ventana de bloques, que representa la programación detrás de la aplicación que se creará. El primer conjunto de bloques se encarga de establecer la conexión con Firebase y mostrar en la pantalla del usuario las lecturas almacenadas en la base de datos. El segundo conjunto de bloques se activa al presionar el botón de enviar y se encarga de enviar los datos de usuario y dígito ingresados por el usuario a la base de datos. Además, al presionar el botón, se borran los campos de texto para una mejor experiencia de uso. 
+
+![Imagen de WhatsApp 2023-06-13 a las 19 45 34](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/1a4f3f96-7b54-4702-ac6c-663d6052f6bf)
+
+
+
+Es importante mencionar que al utilizar Firebase en MIT App Inventor, es recomendable que los nombres de las variables utilizadas en la aplicación se correspondan con los nombres de las colecciones y campos en la base de datos Firebase. Esto facilitará la sincronización y manipulación de los datos entre la aplicación y Firebase, asegurando una comunicación fluida y precisa entre ambos
+
 
 
 ![Imagen de WhatsApp 2023-06-06 a las 23 05 06](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/18310c10-1eb5-4bae-9976-35bd16fe7385)
@@ -126,6 +149,10 @@ Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la
 *La ultima se peude cambiar para una mas reciente (ver los otros sensores)*
 
 Se realiza una aplicación móvil para mostrar los datos resevados en la base de datos **Firebase**. Esta aplicación tiene que contar con dos campos de texto (*usuario* y *número*), los cuales también son enviados a la base de datos.
+
+
+
+
 
 
 ## extra
