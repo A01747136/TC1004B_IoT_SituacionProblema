@@ -98,13 +98,13 @@ Para instalar la biblioteca Firebase ESP32 Client, escribe "Firebase ESP32" en e
 ## Configuración, lectura de sensores y envío de datos a la base de datos ARDUINO IDE
 
 ### Librerías
-![Imagen de WhatsApp 2023-06-13 a las 19 49 37](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/f547bb8c-1fbb-417e-86f8-c14e795be59e)
+![ArdCod_Lib](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5d791a3f-6be9-41fe-b77c-960f20726ab4)
 
 Primero se integran las librerías que se van a utilizar: la librería DHT es para el sensor de temperatura y humedad DHT11, la librería Wifi es para establecer una conexión WiFi, PubSubClient es para el MQTT que es utilizado por **Firebase**, FirebaseESPClient es para poder interactuar con **Firebase** y TokenHelper es para los tokens de autenticación.
 
 ### Variables y constantes
 
-![Imagen de WhatsApp 2023-06-13 a las 19 54 02](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/47dfc4cc-0153-4f1e-aac3-8f6d3f5a6854)
+![ArdCod_VarCons](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/1161078d-6634-41b1-8dc9-88247e96222f)
 
 Se definen ciertas constantes, una de ellas es para las credenciales de la red WiFi a la cual se debe de conectar el dispositivo (*SSID* y *Password*). Igualmente se introduce la clave de *API* para la base de datos **Firebase**, de la misma manera, se agrega la *URL* de la base de datos. Firebase *fbdo* funciona para interactuar con la base de datos, *auth* para la autenticación de usuario y *config* para la configuración de la conexión y autenticación de la base de datos.
 
@@ -112,7 +112,7 @@ La variable *sendDataPrevMillis* es utilizada para el control de tiempo del env�
 
 ### Función principal
 
-![Captura de Pantalla 2023-06-14 a la(s) 8 05 55 a  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/af92e6e1-122a-40b8-98d7-6db3e4c1a107)
+![ArdCod_MainFun](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/26a7af75-bf9a-44ba-8307-94e2fecaf76b)
 
 Se desarrolla la configuración inicial con la función *setup()*, en la cual se inicia la comunicación serial a una velocidad de 115200 baudios, además de imprimir un mensaje de prueba en la consola serial. Igualmente, se configura el pin del sensor de fin de carrera como entrada y se inicia el sensor DHT. Además, se llama a la función *setup_wifi()* para conectar el dispositivo a la red Wi-Fi y configurar **Firebase**.
 
@@ -120,18 +120,18 @@ Para el bucle principal *loop()*, se realiza una pausa de 2 segundos utilizando 
 De igual manera, se llama a la función *funcion_firebase()* para enviar los datos a Firebase.
 
 ### Conexión Wi-Fi 
-![Imagen de WhatsApp 2023-06-13 a las 19 59 50](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/c298076d-f921-4011-9c7d-d15c0b9ef5d8)
+![ArdCod_WiFi](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/3d2c0182-4ccf-47cb-af59-e35654cac5b3)
 
 Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la función *setup_wifi* para conectar el dispositivo a la red WiFi y configurar **Firebase**. La función *setup_wifi* es la encargada de conectar el dispositivo a la red Wi-Fi que ha sido especializada y espera a que se establezca la conexión. Igualmente se configura la clave de *API* y la *URL* de la base de datos con el objeto config de **Firebase**. Se registran las credenciales proporcionadas por las variables *SSID* y *Password*, y si el registro es exitoso, se establece la variable *signupOK* como verdadera (*true*), si el registro falla (*false*) se imprime un mensaje de error en la consola.
 
 ### Foto resistencia
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/35675699-8644-415f-90d7-e767ecd34fdb)
+![ArdCod_FotoR](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/dde59da8-748b-4dbd-b5b5-c0208a436093)
 
 ### Fin de carrera
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/59eee143-2912-4894-9234-83995adab511)
+![ArdCod_FinCar](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/0970e325-dbaa-4e06-a9a8-f21737bd2ff9)
 
 ### Sensor de temperatura y humedad DHT11
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/dc7953f0-0baa-4538-8f54-6088efddb464)
+![ArdCod_TemHum](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/577f72a6-2705-4776-b068-2b00d674cc7b)
 
 Se determinan las funciones para obtener valores de los sensores. La función *valor_luz()* se utiliza para leer el valor analógico del sensor de luz utilizando la función *analogRead()* y lo devuelve. La función *estado_luz()* es utilizada para leer el valor del sensor de luz y con los parámetros establecidos determina el estado de iluminación (*oscuridad*, *ambiente* o *luz*) según el valor leído. Devuelve el estado como una cadena de texto. De una similar manera, la función *fin_de_carrera()* es la encargada de lee el estado del sensor de fin de carrera y devuelve *Presionado* si el sensor está presionado y la lectura es de 0, y si la lectura es de 1 significa que el botón está siendo presionado y devuelve *Libre*. 
 
