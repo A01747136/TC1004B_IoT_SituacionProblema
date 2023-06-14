@@ -37,8 +37,6 @@ Se realizará la conexión de varios componentes al ESP32 utilizando un protoboa
 
 ![DiagramaCon_ESP32](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/05924edc-b370-485c-9479-917b08150687)
 
-![Imagen de WhatsApp 2023-06-13 a las 19 37 04](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5a0dcd48-42b0-4252-8b94-b539e753cc71)
-
 ## Configuración inicial del entorno de Arduino para utilizar el ESP32
 Antes de comenzar a escribir el código de Arduino, es importante realizar algunas configuraciones en tu equipo para garantizar un óptimo funcionamiento. A continuación, se te mostrara paso a paso a través de estas configuraciones para que puedas seguir el proceso de manera sencilla.
 ### Placa ESP32: Configuración y Conexión
@@ -148,7 +146,7 @@ La función *funcion_firebase()* se utiliza para enviar los datos obtenidos a **
 
 ## Monitor serial y envió de datos
 
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/a23afbee-3e00-4789-825d-9d55d19e5e24)
+![MonitorSerial_Sens](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/9d5f8a04-c43f-4d8b-b6b7-37d45bdc1ddf)
 
 En el monitor serial se muestran los datos obtenidos de los sensores, además de mostrar si la conexión Wi-Fi es exitosa. Igualmente, se muetsra si se subieron los datos a **Firebase** correctamente.
 
