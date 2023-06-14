@@ -120,7 +120,7 @@ Aquí es donde se inicializa la comunicación serial y el sensor DHT. Llama a la
 
 ## Desarrollo de la aplicación móvil MIT AppInventor
 
-En la plataforma MIT App Inventor, se utilizarán bloques de programación para desarrollar una aplicación móvil que permita visualizar los datos almacenados en Firebase y permita al usuario ingresar información. A continuación, se proporciona una explicación general de cómo se utilizarán los bloques en el entorno de App Inventor.
+En la plataforma MIT App Inventor, se utilizarán bloques de programación para desarrollar una aplicación móvil que permita visualizar los datos almacenados en Firebase y permita al usuario ingresar información. Se mostrarán los datos resevados en la base de datos **Firebase** y la app va a contar con dos campos de texto (*usuario* y *número*), los cuales también son enviados a la base de datos. A continuación, se proporciona una explicación general de cómo se utilizarán los bloques en el entorno de App Inventor.
 
 En la ventana de diseño (Designer), se arrastrarán y colocarán los elementos de la interfaz que se deseen, como etiquetas de texto, campos de texto, botones, etc. Estos componentes permitirán mostrar los datos y permitirán al usuario ingresar información.
 
@@ -134,25 +134,23 @@ Es importante poner el API Key de tu base de datos en donde dice "FirebaseToken"
 
 ![Captura de Pantalla 2023-06-13 a la(s) 9 42 57 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/8fd893dd-1faa-49bf-ab53-2791ed0506d2)
 
-A continuación, se muestra la ventana de bloques, que representa la programación detrás de la aplicación que se creará. El primer conjunto de bloques se encarga de establecer la conexión con Firebase y mostrar en la pantalla del usuario las lecturas almacenadas en la base de datos. El segundo conjunto de bloques se activa al presionar el botón de enviar y se encarga de enviar los datos de usuario y dígito ingresados por el usuario a la base de datos. Además, al presionar el botón, se borran los campos de texto para una mejor experiencia de uso. 
+A continuación, se muestra la ventana de bloques, que representa la programación detrás de la aplicación que se creará. El primer conjunto de bloques se encarga de establecer la conexión con Firebase y mostrar en la pantalla del usuario las lecturas almacenadas en la base de datos. Es importante mencionar que al utilizar Firebase en MIT App Inventor, es recomendable que los nombres de las variables utilizadas en la aplicación se correspondan con los nombres de las colecciones y campos en la base de datos Firebase. Esto facilitará la sincronización y manipulación de los datos entre la aplicación y Firebase, asegurando una comunicación fluida y precisa entre ambos.
 
-![Imagen de WhatsApp 2023-06-13 a las 19 45 34](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/1a4f3f96-7b54-4702-ac6c-663d6052f6bf)
-
-
-
-Es importante mencionar que al utilizar Firebase en MIT App Inventor, es recomendable que los nombres de las variables utilizadas en la aplicación se correspondan con los nombres de las colecciones y campos en la base de datos Firebase. Esto facilitará la sincronización y manipulación de los datos entre la aplicación y Firebase, asegurando una comunicación fluida y precisa entre ambos
+![Captura de Pantalla 2023-06-13 a la(s) 10 12 53 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/cbc20c74-b2fc-47e9-a537-4954cceac143)
 
 
+El segundo conjunto de bloques se activa al presionar el botón de enviar y se encarga de enviar los datos de usuario y dígito ingresados por el usuario a la base de datos. Además, al presionar el botón, se borran los campos de texto para una mejor experiencia de uso. 
 
-![Imagen de WhatsApp 2023-06-06 a las 23 05 06](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/18310c10-1eb5-4bae-9976-35bd16fe7385)
-
-*La ultima se peude cambiar para una mas reciente (ver los otros sensores)*
-
-Se realiza una aplicación móvil para mostrar los datos resevados en la base de datos **Firebase**. Esta aplicación tiene que contar con dos campos de texto (*usuario* y *número*), los cuales también son enviados a la base de datos.
+![Captura de Pantalla 2023-06-13 a la(s) 10 13 25 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5cc31ed8-41f8-40b9-8ca8-72a6772edf22)
 
 
+Para utilizar la aplicación desarrollada es necesario descargar la aplicación "MIT APP Inventror" en un dispositivo móvil Android. Una vez instalada, se debe acceder a la ventana de diseño (Designer) en MIT App Inventor desde tu ordenador y seleccionar la opción "Connect" seguida de "AI Companion". Esto generará un código QR y un código alfanumérico que se deben ingresar en la aplicación móvil desde el dispositivo.
 
+![Captura de Pantalla 2023-06-13 a la(s) 10 00 18 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/c7448c4e-fad2-4331-a421-5ec595e2bf73)
 
+Una vez que el dispositivo móvil lee el código QR o el código alfanumérico, la aplicación comenzará a cargarse. Una vez que la carga se complete por completo, la pantalla de la aplicación diseñada en MIT App Inventor se mostrará en el dispositivo móvil.
+
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/f6ecd72c-3688-4536-9c56-b15d3da4d519)
 
 
 ## extra
