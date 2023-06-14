@@ -137,14 +137,18 @@ Se determinan las funciones para obtener valores de los sensores. La función *v
 
 Por último, las funciones para obtener los valores de temperatura y humedad del sensor DHT son *temp_dht()*, la cual lee la temperatura en grados Celsius del sensor DHT utilizando la función *readTemperature()* y la devuelve como un valor de tipo float. Igualmente, se utiliza *hum_dht()¨para leer la humedad del sensor DHT utilizando la función *readHumidity()* y la devuelve como un valor de tipo float. Para ambas funciones, si la lectura falla, se imprime un mensaje de error en la consola serial y se devuelve 0.0.
 
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/a23afbee-3e00-4789-825d-9d55d19e5e24)
-
 ### Firebase
 
 ![Captura de Pantalla 2023-06-14 a la(s) 8 06 16 a  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/790e034e-9f2d-40b1-8453-6efd6853ac0d)
 ![Captura de Pantalla 2023-06-14 a la(s) 8 06 35 a  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/937488fb-ac07-4e46-b0de-6ddfc06120b7)
 
 La función *funcion_firebase()* se utiliza para enviar los datos obtenidos a **Firebase**. En esta función se verifica si **Firebase** está listo, si el registro fue exitoso y si ha pasado suficiente tiempo desde el último envío de datos. Si se cumplen todas las condiciones, utiliza las funciones *setFloat()* y *setString()* de **Firebase** para enviar los valores de temperatura, humedad, valor de luz, estado de luz y estado del sensor de fin de carrera a las rutas correspondientes en la base de datos de **Firebase**. Básicamente lo que cambia para enviar cada dato, es dentro del if de esta forma: (Firebase.RTDB.set**Tipo de variable(String/Float)**(&fbdo, "**nodo dentro de la base de datos**/**subnodo dentro del nodo**", **variable a almacenar**)). Finalmente, imprime mensajes de éxito o error en la consola serial según el resultado de cada operación.
+
+## Monitor serial y envió de datos
+
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/a23afbee-3e00-4789-825d-9d55d19e5e24)
+
+En el monitor serial se muestran los datos obtenidos de los sensores, además de mostrar si la conexión Wi-Fi es exitosa. Igualmente, se muetsra si se subieron los datos a **Firebase** correctamente.
 
 ## Desarrollo de la aplicación móvil MIT AppInventor
 
@@ -181,4 +185,5 @@ Una vez que el dispositivo móvil lee el código QR o el código alfanumérico, 
 ## Resultados
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/53da0784-d786-44e6-9864-5260c08deac8)
-De esta manera es como se tiene que ver los datos en **Firebase**. Se
+
+Los valores que se obtuvieron de **Arduino** y de **AppInventor** son mostrados en la base de datos **Firebase**. Estos valores van cambiando conforme vayan siendo obtenidos.
