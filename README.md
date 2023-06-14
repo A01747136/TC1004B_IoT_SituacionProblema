@@ -144,9 +144,6 @@ Por último, las funciones para obtener los valores de temperatura y humedad del
 
 La función *funcion_firebase()* se utiliza para enviar los datos obtenidos a **Firebase**. En esta función se verifica si **Firebase** está listo, si el registro fue exitoso y si ha pasado suficiente tiempo desde el último envío de datos. Si se cumplen todas las condiciones, utiliza las funciones *setFloat()* y *setString()* de **Firebase** para enviar los valores de temperatura, humedad, valor de luz, estado de luz y estado del sensor de fin de carrera a las rutas correspondientes en la base de datos de **Firebase**. Básicamente lo que cambia para enviar cada dato, es dentro del if de esta forma: (Firebase.RTDB.set**Tipo de variable(String/Float)**(&fbdo, "**nodo dentro de la base de datos**/**subnodo dentro del nodo**", **variable a almacenar**)). Finalmente, imprime mensajes de éxito o error en la consola serial según el resultado de cada operación.
 
-![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/53da0784-d786-44e6-9864-5260c08deac8)
-De esta manera es como se tiene que ver los datos en **Firebase**.
-
 ## Desarrollo de la aplicación móvil MIT AppInventor
 
 En la plataforma **MIT App Inventor**, se utilizarán bloques de programación para desarrollar una aplicación móvil que permita visualizar los datos almacenados en **Firebase** y permita al usuario ingresar información. Se mostrarán los datos resevados en la base de datos **Firebase** y la app va a contar con dos campos de texto (*usuario* y *número*), los cuales también son enviados a la base de datos. A continuación, se proporciona una explicación general de cómo se utilizarán los bloques en el entorno de App Inventor.
@@ -178,3 +175,6 @@ Para utilizar la aplicación desarrollada es necesario descargar la aplicación 
 Una vez que el dispositivo móvil lee el código QR o el código alfanumérico, la aplicación comenzará a cargarse. Una vez que la carga se complete por completo, la pantalla de la aplicación diseñada en *MIT AppInventor* se mostrará en el dispositivo móvil.
 
 ![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/f6ecd72c-3688-4536-9c56-b15d3da4d519)
+
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/53da0784-d786-44e6-9864-5260c08deac8)
+De esta manera es como se tiene que ver los datos en **Firebase**.
