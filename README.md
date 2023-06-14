@@ -137,6 +137,8 @@ Se determinan las funciones para obtener valores de los sensores. La función *v
 
 Por último, las funciones para obtener los valores de temperatura y humedad del sensor DHT son *temp_dht()*, la cual lee la temperatura en grados Celsius del sensor DHT utilizando la función *readTemperature()* y la devuelve como un valor de tipo float. Igualmente, se utiliza *hum_dht()¨para leer la humedad del sensor DHT utilizando la función *readHumidity()* y la devuelve como un valor de tipo float. Para ambas funciones, si la lectura falla, se imprime un mensaje de error en la consola serial y se devuelve 0.0.
 
+![image](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/a23afbee-3e00-4789-825d-9d55d19e5e24)
+
 ### Firebase
 
 ![Captura de Pantalla 2023-06-14 a la(s) 8 06 16 a  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/790e034e-9f2d-40b1-8453-6efd6853ac0d)
