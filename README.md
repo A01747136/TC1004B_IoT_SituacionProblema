@@ -77,23 +77,23 @@ Luego, ve al menú "Herramientas" y selecciona la opción "Monitor Serie" o "Ser
 
 Ve al menú "Programa" y selecciona "Incluir biblioteca" > "Gestionar bibliotecas". En la ventana "Gestionar bibliotecas", verás un campo de búsqueda en la parte superior derecha. Escribe el nombre de la biblioteca que deseas instalar.
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 29 52 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/5a1f3e4b-288e-414e-b8de-0d1470dbf0d2)
+![Arduino_AdminLib](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/d817b156-35c5-4867-84b4-b102c7e49fae)
 
 Para instalar la biblioteca EspMQTTClient, escribe "EspMQTTClient" en el campo de búsqueda. Verás la biblioteca EspMQTTClient en la lista de resultados. Haz clic en el botón "Instalar" para instalarla.
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 31 04 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/3608c60b-cc2b-4e24-8c2c-20a3c834d534)
+![Arduino_LibMQTT](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/e5b77738-666c-4d7c-ba73-ebb412866f85)
 
 Para instalar la biblioteca DHT Sensor Library, escribe "DHT Sensor" en el campo de búsqueda. Verás la biblioteca DHT Sensor Library en la lista de resultados. Haz clic en el botón "Instalar" para instalarla.
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 31 45 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/88bf12e4-da06-4950-984f-d77feae29828)
+![Arduino_LibDHT](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/097ecc9c-8e2f-4029-a2a0-d698b75fb9e8)
 
 Para instalar la biblioteca Firebase Arduino Client library for ESP8266, escribe "Firebase Arduino" en el campo de búsqueda. Verás la biblioteca Firebase Arduino en la lista de resultados. Haz clic en el botón "Instalar" para instalarla.
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 32 19 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/14d9c13f-6274-459b-8b00-386718aef49a)
+![Arduino_LibFB](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/fa7eeb1f-1209-4707-8041-b4be86ce9da0)
 
 Para instalar la biblioteca Firebase ESP32 Client, escribe "Firebase ESP32" en el campo de búsqueda. Verás la biblioteca Firebase ESP32 Client en la lista de resultados. Haz clic en el botón "Instalar" para instalarla.
 
-![Captura de Pantalla 2023-06-13 a la(s) 8 33 04 p  m](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/135858550/755607fb-7e40-4494-827f-d7d30167503f)
+![Arduino_LibFBESP](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/c3a920f1-c0ce-4d75-97a7-e30196113b2e)
 
 ## Configuración, lectura de sensores y envío de datos a la base de datos ARDUINO IDE
 
