@@ -54,9 +54,10 @@ En esta parte es el envió de datos a **Firebase**, se verifica que está listo 
 
 ![Imagen de WhatsApp 2023-06-06 a las 23 05 06](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/18310c10-1eb5-4bae-9976-35bd16fe7385)
 
-*La ultima se peude cambiar para una mas reciente (ver los otros sensores)
+*La ultima se peude cambiar para una mas reciente (ver los otros sensores)*
 
 Se realiza una aplicación móvil para mostrar los datos resevados en la base de datos **Firebase**. Esta aplicación tiene que contar con dos campos de texto (*usuario* y *número*), los cuales también son enviados a la base de datos.
 
 
 ## Diagrama de Conexiones
+![Imagen de WhatsApp 2023-06-13 a las 19 37 04](https://github.com/A01747136/TC1004B_IoT_SituacionProblema/assets/88682618/5a0dcd48-42b0-4252-8b94-b539e753cc71)
